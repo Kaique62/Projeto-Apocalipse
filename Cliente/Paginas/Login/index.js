@@ -1,12 +1,17 @@
 var usuariosCadastrados = {};
 
 function cadastrar(){
-    
+    let informationID = ["emailCadastro", "passwordCadastro", "nameCadastro", "nascimentoCadastro", "generoCadastro", "telefoneCadastro"]
+    let dicionario = {}
+    for (let i = 0; i < informationID.length; i++)
+        if (document.getElementById(informationID[i]).value.trim() == "");
+        console.log("Preencha Todos os Campos!");
+    dicionario[informationID[i]] = document.getElementById(informationID[i]).value;
 }
 
 function login(){
-    let user = document.getElementById("loginInput").value;
-    let senha = document.getElementById("passwordInput").value;
+    let user = document.getElementById("userLogin").value;
+    let senha = document.getElementById("passwordLogin").value;
  
     if (user.trim() == "" | senha.trim() == ""){
         console.log("Preencha Todos os Campos!");
