@@ -23,12 +23,7 @@ function login(){
     }
 }
 
-function mostrarCadastro(){
-    document.getElementById("divCadastro").style.display = "flex"
-    document.getElementById("divLogin").style.display = "none"
-}
-
-function mostrarLogin(){
-    document.getElementById("divLogin").style.display = "flex"
-    document.getElementById("divCadastro").style.display = "none"
+function changeMode(){
+    document.getElementById("divCadastro").style.display = document.getElementById("divCadastro").style.display == "none" ? "block": "none"
+    document.getElementById("divLogin").style.display = document.getElementById("divLogin").style.display == "none" ? "block": "none"
 }
