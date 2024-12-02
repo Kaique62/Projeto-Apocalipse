@@ -4,6 +4,8 @@ const paths = require("./paths")
 var app = express();
 const port = 3000;
 
+app.use(express.static("Cliente/Paginas"))
+
 app.get('/', (req, res) => {
     res.sendFile(paths.getPage("MainPage"));
 });

@@ -7,5 +7,9 @@ module.exports = {
 
     getImage: function (file) { //Retorna Caminho de uma determinada Imagem
         return path.join(__dirname, `../Cliente/Imagens/${folder}/${file}`);
+    },
+
+    getClient: function() {
+        return path.join(__dirname, `../Cliente`);
     }
 }
