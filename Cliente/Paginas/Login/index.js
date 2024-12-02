@@ -22,3 +22,13 @@ function login(){
             + `Senha: ${senha}`);
     }
 }
+
+function mostrarCadastro(){
+    document.getElementById("divCadastro").style.display = "flex"
+    document.getElementById("divLogin").style.display = "none"
+}
+
+function mostrarLogin(){
+    document.getElementById("divLogin").style.display = "flex"
+    document.getElementById("divCadastro").style.display = "none"
+}

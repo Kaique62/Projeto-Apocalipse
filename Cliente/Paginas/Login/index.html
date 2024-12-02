@@ -11,8 +11,9 @@
         <label>Senha: </label>
         <input type="password" id="passwordLogin">
         <button onclick="login()">Confirmar</button>
+        <span onclick="mostrarCadastro()">cadastrar-se</span>
     </div>
-    <div id="divCadastro">
+    <div id="divCadastro" style="display: none;">
         <label>Email:</label>
         <input type="email" id="emailCadastro">
         <label>Senha:</label>
@@ -30,6 +31,7 @@
         <label>Telefone:</label>
         <input type="tel" id="telefoneCadastro">
         <button onclick="cadastrar()">Confirmar</button>
+        <span onclick="mostrarLogin()">Logar</span>
     </div>
 
     <script src="index.js"></script>
