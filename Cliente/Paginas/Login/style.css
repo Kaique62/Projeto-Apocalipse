@@ -5,8 +5,7 @@
 }
 body{
     display: flex;
-    width: 1800px;
-    height: 920px;
+    min-height: 720px;
     align-items: center;
 }
 .form {
@@ -14,8 +13,8 @@ body{
     flex-direction: column;
     gap: 10px;
     background-color: #ffffff;
-    padding: 30px;
-    width: 450px;
+    padding: 30px;  
+    min-width: 280px;
     border-radius: 20px;
     border: 2px solid black;
 }
