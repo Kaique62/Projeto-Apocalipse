@@ -3,10 +3,11 @@ var usuariosCadastrados = {};
 function cadastrar(){
     let informationID = ["emailCadastro", "passwordCadastro", "nameCadastro", "nascimentoCadastro", "generoCadastro", "telefoneCadastro"]
     let dicionario = {}
-    for (let i = 0; i < informationID.length; i++)
+    for (let i = 0; i < informationID.length; i++){
         if (document.getElementById(informationID[i]).value.trim() == "");
         console.log("Preencha Todos os Campos!");
-    dicionario[informationID[i]] = document.getElementById(informationID[i]).value;
+        dicionario[informationID[i]] = document.getElementById(informationID[i]).value;
+    }
 }
 
 function login(){
