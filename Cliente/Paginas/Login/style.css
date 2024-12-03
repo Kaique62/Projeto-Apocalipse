@@ -5,42 +5,45 @@
 }
 body{
     display: flex;
-    min-height: 720px;
+    min-height: 920px;
     align-items: center;
+    background-color: pink;
 }
-.form {
+
+/*Informações do Login*/
+
+#login{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 50px;
     background-color: #ffffff;
-    padding: 30px;  
-    min-width: 280px;
-    border-radius: 20px;
+    padding: 40px;
+    min-width: 400px;
+    min-height: 300px;
+    border-radius: 30px;
     border: 2px solid black;
 }
-  
+
 .form button {
     align-self: flex-end;
 }
-  
+
 .flex-column > label {
     color: #151717;
     font-weight: 600;
 }
   
 .inputForm {
-    border: 1.5px solid #ecedec;
+    border: 2px solid #b6b6b6;
     border-radius: 10px;
     height: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    transition: 0.2s ease-in-out;
+    padding-left: 20px;
+    transition: 0.75s ease-in-out;
 }
   
 .input {
-    margin-left: 10px;
-    border-radius: 10px;
+    margin-left: 20px;
+    border-radius: 15px;
     border: none;
     width: 85%;
     height: 100%;
@@ -49,9 +52,9 @@ body{
 .input:focus {
     outline: none;
 }
-  
+
 .inputForm:focus-within {
-    border: 1.5px solid rgb(67, 67, 243);
+    border: 2px solid #2d79f3;
 }
   
 .flex-row {
@@ -115,15 +118,31 @@ body{
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-  
+
 .btn:hover {
-    border: 1px solid #2d79f3;
+    border: 1.5px solid #2d79f3;
 }
-  
-      
-#photos{
-    background-color: black;
-    z-index: 2;
-    width: 500px;
-    height: 500px;
+
+/*Informações do Cadadastro*/
+#cadastrar{
+    display: none;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #ffffff;
+    padding: 40px;
+    min-height: 250px;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+#sexos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-icon{
+    width: 25px;
+    height: 25px;
 }
