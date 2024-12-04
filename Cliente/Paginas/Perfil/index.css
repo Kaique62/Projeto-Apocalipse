@@ -1,0 +1,85 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+
+body{
+    display: flex;
+    min-height: 920px;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    gap: 80px;
+}
+
+.div1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 800px;
+    height: 900px;
+    gap: 10px;
+    
+}
+.div2{
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    width: 800px;
+    height: 900px;
+    gap: 10px;
+    padding-left: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%
+}
+
+.minhas_consultas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    color: white;
+    font-size: 15px;
+    font-weight: 500px;
+    border-radius: 10px;
+    height: 150px;
+    width: 100%;
+}
+
+.DIV_profissionais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.profissionais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 5px 0;
+    color: white;
+    background-color: #151717;
+    font-size: 15pxpx;
+    font-weight: 250px;
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+
+}
