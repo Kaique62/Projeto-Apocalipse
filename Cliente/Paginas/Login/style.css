@@ -8,6 +8,7 @@ body{
     min-height: 920px;
     align-items: center;
     background-color: pink;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 /*Informações do Login*/
@@ -18,10 +19,13 @@ body{
     gap: 50px;
     background-color: #ffffff;
     padding: 40px;
-    min-width: 400px;
+    min-width: 200px;
+    width: 400px;
     min-height: 300px;
     border-radius: 30px;
     border: 2px solid black;
+    align-self: center;
+    margin-bottom: 200px;
 }
 
 .form button {
@@ -34,13 +38,14 @@ body{
 }
   
 .inputForm {
-    border: 2px solid #b6b6b6;
-    border-radius: 10px;
+    border-radius: 16px;
     height: 50px;
+    border: 1px black solid ;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    transition: 0.75s ease-in-out;
+    padding-left: 10px;
+    transition: 0.05s ease-in-out;
+    justify-content: space-evenly;
 }
   
 .input {
@@ -48,7 +53,7 @@ body{
     border-radius: 15px;
     border: none;
     width: 85%;
-    height: 100%;
+    height: 95%;
 }
   
 .input:focus {
@@ -147,4 +152,23 @@ body{
 ion-icon{
     width: 25px;
     height: 25px;
+}
+/*Imagem Lateral*/
+#triangle {
+	width: 1600px;
+	height: 1080px;
+	background: transparent;
+    margin-left: -200px;
+    
+	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(100% -50%, 0% 100%, 100% 100%);
+
+    background-image:url("https://ma.senac.br/wp-content/uploads/2017/11/instituto_mais_beleza_backg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-left: 100px;
+    margin-right: -200px;
+    margin-top: -30px;
 }

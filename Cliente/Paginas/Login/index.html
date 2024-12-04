@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeautySphere</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    
+  
 <div id="login">
     <div class="form">
         <div class="flex-column">
@@ -23,7 +22,7 @@
         <div class="inputForm">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" class="input" placeholder="Insira sua Senha" id="passwordLogin">
-            <ion-icon name="eye-outline" id="vendoLogin" onclick="console.log('clicado')"></ion-icon>
+            <ion-icon name="eye-outline" id="vendoLogin" onclick="PasswordVisibility()"></ion-icon>
         </div>
         
         <div class="flex-row">
@@ -34,7 +33,7 @@
         <span class="span"><u>Esqueceu a senha?</u></span>
         </div>
         <button class="button-submit" onclick="login()">Login</button>
-        <p class="p">Não tem uma conta?<span class="span" onclick="cadastrar()"><u>Cadastre-se</u></span>
+        <p class="p">Não tem uma conta?<span class="span" onclick="changeMode()"><u>Cadastre-se</u></span>
     </div>
 </div>
 
@@ -107,8 +106,10 @@
     <p class="p">Possui Cadastro?<span class="span" onclick="voltar()"><u>Fazer Login</u></span>
 </div>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<div id="triangle"></div>
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
