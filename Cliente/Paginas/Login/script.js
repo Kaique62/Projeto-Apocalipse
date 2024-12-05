@@ -2,7 +2,6 @@ var usuariosCadastrados = {};
 
 var triangleImage = document.getElementById("triangle");
 
-
 function resizeTriangle() {
     triangleImage.style.backgroundPosition = `-${0 + (1920 - window.innerWidth)}px`;
 }
