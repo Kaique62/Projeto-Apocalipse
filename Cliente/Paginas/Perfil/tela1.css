@@ -3,13 +3,15 @@
 }
 
 
-body{
+
+
+body {
     display: flex;
-    min-height: 920px;
-    align-items: center;
     justify-content: center;
-    background-color: pink;
-    gap: 80px;
+    align-items: center;
+    background-color: rgb(255, 0, 157); 
+    margin: 0;
+    min-height: 100vh; 
 }
 
 .div1{
@@ -38,19 +40,56 @@ body{
     width: 1900px
 }
 
-.minhas_consultas{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0 10px 0;
-    background-color: #151717;
-    color: white;
-    font-size: 15px;
-    font-weight: 500px;
-    border-radius: 10px;
-    height: 150px;
-    width: 1900px;
+.minhas_consultas {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+  padding: 0; 
+  background: none;
+  margin: 0;
+  overflow: visible;
 }
+
+.cartao-consulta {
+  background-color: #202020;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  flex-shrink: 0;
+}
+
+.cartao-consulta .detalhe {
+  font-size: 14px;
+  font-weight: bold;
+  color: #a9a9a9;
+}
+.cartao-consulta .valor {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ficar responsvo */
+@media (max-width: 768px) {
+  .minhas_consultas {
+      max-height: 300px;
+  }
+
+  .cartao-consulta {
+      font-size: 14px;
+  }
+}
+
 
 .DIV_profissionais{
     display: flex;
@@ -140,7 +179,7 @@ input[type="radio"]{
   }
 
 
-
+/*###########################################################################################################*/ /*Pra separar*/
 
 
   #option-3:checked:checked ~ .option-3,
@@ -167,7 +206,7 @@ input[type="radio"]{
   }
 
 
-
+/*###########################################################################################################*/ /*Pra separar*/
 
   #option-5:checked:checked ~ .option-5,
   #option-6:checked:checked ~ .option-6{
@@ -191,3 +230,38 @@ input[type="radio"]{
   #option-6:checked:checked ~ .option-6 span{
     color: #fff;
   }  
+
+
+  .form-consulta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-consulta input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-consulta button {
+    padding: 10px;
+    background-color: #0069d9;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-consulta button:hover {
+    background-color: #0056b3;
+}
