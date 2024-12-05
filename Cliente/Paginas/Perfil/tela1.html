@@ -4,37 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tela1.css">
-    <title>Document</title>
+    <title>Tela Cliente</title>
 </head>
 <body>
     <div class="div1">
         <div class="header">
-        <p >HEADER DO CLIENTE</p>
-        </div>
-
-        <div class="minhas_consultas">
-            <div class="cartao-consulta">
-                <p class="detalhe">Nome do Paciente:</p>
-                <p class="valor">João da Silva</p>
-        
-                <p class="detalhe">Data da Consulta:</p>
-                <p class="valor">12/12/2024</p>
-        
-                <p class="detalhe">Motivo da Consulta:</p>
-                <p class="valor">Dor de cabeça</p>
-        
-                <p class="detalhe">Médico Responsável:</p>
-                <p class="valor">Dr. Carlos Souza</p>
-        
-                <p class="detalhe">Procedimento Realizado:</p>
-                <p class="valor">Consulta inicial</p>
+            <p style="font-size: 25px;"><b><u>HEADER DO CLIENTE</u></b></p>
+            <div id="icones">
+                <ion-icon name="person-circle-outline"></ion-icon>
             </div>
         </div>
-        
 
-        <div class="DIV_profissionais"> 
-                <p class="profissionais">Profissional 1</p>
-                <p class="profissionais">profissional 2</p>
+        <div class="DIV_profissionais">
+            <div id="profissional_1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxh-9wC95FiC8q2jwxgbmJ1XDZB-dqiP2kQ&s" alt="">
+                <p class="profissionais" >Katleen</p>
+            </div>
+
+            <div id="profissional_2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxh-9wC95FiC8q2jwxgbmJ1XDZB-dqiP2kQ&s" alt="">
+                <p class="profissionais">Laila</p>
+            </div>
+                
         </div>
 
         <div class="DIV_procedimentos">
@@ -75,7 +66,6 @@
                 <span>Procedimento 6</span>
             </label>
 
-
         </div>
 
         <div class="calendarios">
@@ -83,9 +73,8 @@
             <input type="time">
         </div>
     </div>
-
-
-    <script src="tela1.js"></script>
     
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
