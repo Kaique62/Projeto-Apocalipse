@@ -22,6 +22,8 @@ function createDayOfWeek(){
     for (let i = 0; i < innerText.length; i++){ // Loop para criar divs com os dias da semana no calendario
         let dia = document.createElement("div");
         dia.className = "FramesSemana";
+        if (i == 6)
+            dia.className = "FramesSemana borderlessRight"
         dia.innerHTML = innerText[i];
         diasFrame.append(dia);
     }
@@ -34,9 +36,20 @@ function createMonthDays() { // Similar a função "createDayOfWeek" porém para
             row++;
 
         let dia = document.createElement("div");
-        dia.className = "FramesSemana";
+        
+        if (row == 4 & i%7 == 6)
+            dia.className = "FramesSemana borderlessDown borderlessRight";
+        else if (i%7 == 6)
+            dia.className = "FramesSemana borderlessRight";
+        else if (row == 4)
+            dia.className = "FramesSemana borderlessDown";
+        else
+            dia.className = "FramesSemana";
+
         dia.id = row + "/" + i%7;
         dia.innerHTML = "x";
+
+        console.log("Grid: "+ row + "/" + i%7 + "/ dia" + dia.className)
 
         mesFrame.append(dia);
     }
