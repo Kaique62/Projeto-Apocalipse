@@ -26,6 +26,7 @@ body{
     border: 2px solid black;
     align-self: center;
     margin-bottom: 200px;
+    margin: 100px auto;
 }
 
 .form button {
@@ -140,6 +141,7 @@ body{
     min-height: 250px;
     border-radius: 30px;
     border: 2px solid black;
+    margin: 100px auto;
 }
 
 #sexos{
