@@ -7,7 +7,7 @@ function resizeTriangle() {
 }
 
 addEventListener("resize", resizeTriangle);
- 
+
 function cadastrar(){
     let informationID = ["emailCadastro", "passwordCadastro", "nameCadastro", "nascimentoCadastro", "generoCadastro", "telefoneCadastro"]
     let dicionario = {}
@@ -18,7 +18,8 @@ function cadastrar(){
     }
     console.log(dicionario);
 }
- 
+
+
 function login(){
     let user = document.getElementById("userLogin").value;
     let senha = document.getElementById("passwordLogin").value;
@@ -31,10 +32,11 @@ function login(){
             + `Senha: ${senha}`);
     }
 }
+
  
 function changeMode(){
     document.getElementById("cadastrar").style.display = document.getElementById("cadastrar").style.display == "flex" ? "none": "flex"
-    document.getElementById("login").style.display = document.getElementById("login").style.display == "none" ? "flex": "none";
+    document.getElementById("login").style.display = document.getElementById("login").style.display == "none" ? "flex": "none"
 }
 
 function PasswordVisibility(){
