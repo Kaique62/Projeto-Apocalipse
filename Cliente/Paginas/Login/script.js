@@ -39,6 +39,12 @@ function changeMode(){
     document.getElementById("login").style.display = document.getElementById("login").style.display == "none" ? "flex": "none"
 }
 
-function PasswordVisibility(){
+function PasswordVisibility(id){
+    let element = document.getElementById(id);
+    element.getAttribute("type") == "password" ? element.setAttribute("type", ""): element.setAttribute("type", "password");
 
+    let eyePass = document.getElementsByClassName(id)[0];
+    eyePass.getAttribute("name") == "eye-outline" ? eyePass.setAttribute("name", "eye-off-outline") : eyePass.setAttribute("name", "eye-outline")
+
+    console.log()
 }

@@ -22,7 +22,7 @@
         <div class="inputForm">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" class="input" placeholder="Insira sua Senha" id="passwordLogin">
-            <ion-icon name="eye-outline" id="vendoLogin" onclick="PasswordVisibility()"></ion-icon>
+            <ion-icon name="eye-off-outline" id="vendoLogin" onclick="PasswordVisibility('passwordLogin')" class="passwordLogin"></ion-icon>
         </div>
 
         <div class="flex-row">
@@ -88,7 +88,7 @@
         <div class="inputForm">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" class="input" placeholder="Insira sua Senha" id="passwordCadastro">
-            <ion-icon name="eye-outline" id="VendoCadastroPass"></ion-icon>
+            <ion-icon name="eye-off-outline" id="VendoCadastroPass" onclick="PasswordVisibility('passwordCadastro')" class="passwordCadastro"></ion-icon>
         </div>
 
         <div class="flex-column">
@@ -96,7 +96,7 @@
         <div class="inputForm">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" class="input" placeholder="Confirme sua Senha" id="confirmPasswordCadastro">
-            <ion-icon name="eye-outline" id="vendoCadastroConfir"></ion-icon>
+            <ion-icon name="eye-off-outline" id="vendoCadastroConfir" onclick="PasswordVisibility('confirmPasswordCadastro')" class="confirmPasswordCadastro"></ion-icon>
         </div>
 
         <input type="checkbox">
