@@ -1,0 +1,86 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Código</title>
+    <link rel="stylesheet" href="a.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("xDtnVYVuIwu07Ksz5");
+    </script>
+</head>
+
+<body>
+    <div class="login">
+        <h2>Verificação de Código</h2>
+        <hr>
+        <input id="codigo" type="text" placeholder="Digite o código enviado">
+        <hr>
+        <button class="but" onclick="verificar_codigo()">Verificar Código</button>
+        <button class="but" onclick="reinviar_codigo()">reinviar codigo</button>
+        <button class="but" onclick="  window.location.href = 'a.html'">voltar</button>
+        <p id="alertas"></p>
+    </div>
+
+    <div id="dg"></div>
+
+    <script>
+        const codigoCorreto = localStorage.getItem("codigo");
+
+            function verificar_codigo() {
+                const codigoInserido = document.getElementById('codigo').value;
+            
+                const alertas = document.getElementById('alertas');
+                alertas.textContent = "";
+
+
+                if (codigoInserido == codigoCorreto) {
+                    alertas.textContent = "Código correto! Você foi autenticado.";
+                    salvar()
+                } else {
+                    alertas.textContent = "Código incorreto! Tente novamente.";
+                }
+            }
+
+            if (!codigoCorreto) {
+                const alertas = document.getElementById('alertas');
+                alertas.textContent = "Nenhum código armazenado. Certifique-se de que ele foi gerado corretamente.";
+            };
+            function reinviar_codigo(){      
+            const emailInput =localStorage.getItem("email")
+        
+               
+               var min = Math.ceil(1000);
+               var max = Math.floor(9999);
+               const numero_aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+               console.log(numero_aleatorio);
+               
+               
+               var templateParams = {
+                   to_email: emailInput,
+                   from_name: "Gabriel",
+                   from_email: "suportapp02@gmail.com",
+                   subject: "EsticaFlow Código de Verificação",
+                   code: numero_aleatorio
+               };
+               
+               emailjs.send("service_00abt2c", "template_86j57na", templateParams)
+                   .then(function(response) {
+                       localStorage.setItem("codigo_verificaçao",numero_aleatorio)
+                     
+                       alert("Codigo de verificaçao enviado com sucesso!");
+                   
+                     
+                   }, function(error) {
+                       alert("Erro ao enviar o codigo de verificaçao: " + error.text);
+                   });};
+                   function salvar(){
+                       
+                   }
+                
+              
+    </script>
+
+</body>
+</html>

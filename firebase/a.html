@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("xDtnVYVuIwu07Ksz5");
+    </script>
+    <link rel="stylesheet" href="a.css">
+</head>
+
+<body>
+    <div class="login">
+        <h2>FAÇA LOGIN</h2>
+        <hr>
+        <input id="email" type="text" placeholder="Email">
+        <hr>
+        <input id="password" type="password" placeholder="Senha">
+        <hr>
+
+        <button class="but" onclick="enviar_email_cadastro()">LOGIN</button>
+        <p id="alertas"></p>
+    </div>    
+    
+    <div id="dg"></div>
+
+    <script>
+    function enviar_email_cadastro() {
+        const emailInput = document.getElementById('email').value;
+        const passwordInput = document.getElementById('password').value;
+        const alertas = document.getElementById('alertas');
+        const verificarEmail = new RegExp(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
+
+        alertas.textContent = "";
+
+        if (!verificarEmail.test(emailInput)) {
+            alertas.textContent = "Por favor, insira um endereço de e-mail válido.";
+            return;
+        }
+
+        if (!passwordInput) {
+            alertas.textContent = "Por favor, preencha o campo de senha.";
+            return;
+        }
+
+        const min = 1000;
+        const max = 9999;
+        const numero_aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+        console.log("Código gerado: ", numero_aleatorio);
+
+
+        localStorage.setItem("codigo", numero_aleatorio);
+        localStorage.setItem("email",emailInput)
+        localStorage.setItem("senha",emailInput)
+
+        const templateParams = {
+            to_email: emailInput,
+            from_name: "Gabriel",
+            from_email: "suportapp02@gmail.com",
+            subject: "EsticaFlow Código de Verificação",
+            code: numero_aleatorio
+        };
+
+        emailjs.send("service_00abt2c", "template_86j57na", templateParams)
+            .then(function(response) {
+                alertas.textContent = "E-mail enviado com sucesso!";
+                setTimeout(() => {
+                    window.location.href = "codigo.html";
+                }, 1000);
+            }, function(error) {
+                alertas.textContent = "Erro ao enviar e-mail: " + error.text;
+            });
+    }
+    </script>
+</body>
+</html>
