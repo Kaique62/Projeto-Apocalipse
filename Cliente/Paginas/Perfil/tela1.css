@@ -13,6 +13,7 @@ body {
     background-color: #f5f5f7;
     padding: 10px;
     gap: 10px;
+    min-width: 410px;
 }
 
 .header {
@@ -75,17 +76,17 @@ img{
   justify-content: flex-start;
 }
 
-.DIV_profissionais .option{
-  background: #f5f5f7;
-  height: 80px;
-  width: 10%;
+#profissional_1{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  border-radius: 15px;
-  cursor: pointer;
-  padding: 10px;
-  transition: all 0.3s ease;
+  justify-content: center;
+  color: black;
+  background-color: white;
+  font-size: 15px;
+  font-weight: 250px;
+  border-radius: 10px;
+  height: 80px;
+  width: 10%;
 }
 
 .DIV_procedimentos{
@@ -97,6 +98,7 @@ img{
     border-radius: 15px;
     width: 100%;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 .DIV_procedimentos .option{
@@ -114,35 +116,8 @@ img{
 
 
 input[type="radio"]{
-      display: none;
+    display: none;
   }
-
-  #option-Kattlen:checked:checked ~ .option-Kattlen,
-  #option-Laila:checked:checked ~ .option-Laila{
-    border-color: #0069d9;
-    background: #0069d9;
-  }
-  #option-Kattlen:checked:checked ~ .option-Kattlen .dot,
-  #option-Laila:checked:checked ~ .option-Laila .dot{
-    background: #fff;
-  }
-  #option-Kattlen:checked:checked ~ .option-Kattlen .dot::before,
-  #option-Laila:checked:checked ~ .option-Laila .dot::before{
-    opacity: 1;
-    transform: scale(1);
-  }
-  .wrapper .option span{
-    font-size: 20px;
-    color: #808080;
-  }
-  #option-Kattlen:checked:checked ~ .option-Kattlen span,
-  #option-Laila:checked:checked ~ .option-Laila span{
-    color: #fff;
-  }
-
-
-
-
   
   #option-1:checked:checked ~ .option-1,
   #option-2:checked:checked ~ .option-2{
@@ -218,43 +193,65 @@ input[type="radio"]{
   #option-5:checked:checked ~ .option-5 span,
   #option-6:checked:checked ~ .option-6 span{
     color: #fff;
-  }  
+  }   
 
-
-  .form-consulta {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #202020;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    color: white;
+.dias {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  background-color: pink;
+  border-radius: 15px;
+  column-gap: 10px;
+  width: 100%;
+  height: 400px;
+  padding: 10px;  
 }
 
-.form-consulta input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+.calendar {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  width: 30%;
+  height: 400px;
+  min-width: 300px;
 }
 
-.form-consulta button {
-    padding: 10px;
-    background-color: #0069d9;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.list-horas {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  column-gap: 10px;
+  width: 70%;
+  height: 380px;
 }
 
-.form-consulta button:hover {
-    background-color: #0056b3;
+.horas {  
+  padding: 10px;
+  border-radius: 15px;
+  height: 360px;
+  width: 250px;
+  background-color: gainsboro;
+  overflow: auto;
 }
 
+.single-hour {
+  margin-top: 10px;
+  border-radius: 15px;
+  width: 100%;
+  height: 80px;
+  background-color: greenyellow;
+  z-index: 2;
+}
+
+.titulo-dia {
+  background-color: pink;
+  width: 100%;
+  height: 80px;
+  position: sticky;
+  top: 0;
+}
 /* ficar responsivo */
 @media (max-width: 1920px) {
   .minhas_consultas {
