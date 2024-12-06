@@ -16,6 +16,8 @@ body{
 #login{
     display: flex;
     flex-direction: column;
+    align-self: center;
+    position: absolute;
     gap: 50px;
     background-color: #ffffff;
     padding: 40px;
@@ -24,9 +26,10 @@ body{
     min-height: 300px;
     border-radius: 30px;
     border: 2px solid black;
-    align-self: center;
     margin-bottom: 200px;
     margin: 100px auto;
+    
+    z-index: 1;
 }
 
 .form button {
@@ -135,6 +138,8 @@ body{
 #cadastrar{
     display: none;
     flex-direction: column;
+    position: absolute;
+    z-index: 1;
     gap: 50px;
     background-color: #ffffff;
     padding: 40px;
@@ -170,7 +175,10 @@ ion-icon{
     background-repeat: no-repeat;
     background-position: center;
 
-    margin-left: 100px;
-    margin-right: -200px;
+    justify-items: flex-end;
+
+    margin-left: 450px;
+    margin-right: -30px;
     margin-top: -30px;
+
 }
