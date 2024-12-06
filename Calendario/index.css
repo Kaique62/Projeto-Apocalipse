@@ -30,6 +30,10 @@
     margin-top: -2px;
     border-left: none;
 }
+.FramesSemana:hover {
+    cursor: pointer;
+}
+
 .borderlessRight {
     border-right: none;
 }
