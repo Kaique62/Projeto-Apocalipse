@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+* {
+    font-family: "Poppins", sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 99.39%;
+    height: 100px + 10%;
+    margin-left: -10px;
+    margin-top: -10px;
+    padding: 15px;
+    min-width: 500px;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: 99.39%;
+    height: 100px + 10%;
+    margin-left: -10px;
+    margin-bottom: -10px;
+    padding: 15px;
+    min-width: 500px;
+}
+    
+.btn {
+    width: 160px;
+    height: 60px;
+    background-color: white;
+    border: 0px solid transparent;
+    border-radius: 15px;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(207, 205, 205);
+}
+.btn:active {
+    cursor: grabbing;
+    background-color: rgb(167, 167, 167);
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+    background-color: rgb(255, 0, 0);
+    border: 0px transparent transparent;
+    border-radius: 15px;
+}
+.card:hover {
+    cursor: pointer;
+    background-color: rgb(243, 57, 57);
+    margin-top: -25px;
+    -webkit-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+}
+.cols {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: auto;
+    height: 540px;
+}
+
+.divText{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 50%;
+}
+
+.title{
+    align-self: center;
+}
+#intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+}
+#show {
+    border-radius: 15px;
+    background-color: blue;
+    width: 100%;
+    height: 540px;
+}
+a {
+    color: white;
+}
