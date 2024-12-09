@@ -7,21 +7,20 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     background-color: #f5f5f7;
     padding: 10px;
-    gap: 10px;
+    row-gap: 10px;
     min-width: 410px;
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: pink;
-    border: none;
     color: black;
     font-size: 15px;
     font-weight: 500px;
@@ -31,19 +30,14 @@ body {
     padding: 10px;
 }
 
+.titulos h1{
+ font-size: 25px;
+ width: 200px;
+}
+
 ion-icon{
   width: 70px;
   height: 70px;
-}
-
-.minhas_consultas {
-  display: flex;
-  flex-direction: row;
-  gap: 20px; 
-  padding: 0; 
-  background: none;
-  margin: 0;
-  overflow: visible;
 }
 
 /* ficar responsivo */
@@ -76,7 +70,7 @@ img{
   justify-content: flex-start;
 }
 
-#profissional_1{
+.DIV_profissionais .option{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,6 +81,8 @@ img{
   border-radius: 10px;
   height: 80px;
   width: 10%;
+  transition: all 0.3s ease;
+  gap: 10px;
 }
 
 .DIV_procedimentos{
@@ -118,6 +114,29 @@ img{
 input[type="radio"]{
     display: none;
   }
+
+  #option-Kattlen:checked:checked ~ .option-Kattlen,
+  #option-Laila:checked:checked ~ .option-Laila{
+    border-color: #0069d9;
+    background: #0069d9;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen .dot,
+  #option-Laila:checked:checked ~ .option-Laila .dot{
+    background: #fff;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen .dot::before,
+  #option-Laila:checked:checked ~ .option-Laila .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .wrapper .option span{
+    font-size: 20px;
+    color: #808080;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen span,
+  #option-Laila:checked:checked ~ .option-Laila span{
+    color: #fff;
+  }
   
   #option-1:checked:checked ~ .option-1,
   #option-2:checked:checked ~ .option-2{
@@ -143,7 +162,7 @@ input[type="radio"]{
   }
 
 
-/*###########################################################################################################*/ /*Pra separar*/
+/*###########################################################################################################*/ /*Para separar*/
 
 
   #option-3:checked:checked ~ .option-3,
@@ -170,7 +189,7 @@ input[type="radio"]{
   }
 
 
-/*###########################################################################################################*/ /*Pra separar*/
+/*###########################################################################################################*/ /*Para separar*/
 
   #option-5:checked:checked ~ .option-5,
   #option-6:checked:checked ~ .option-6{
@@ -197,23 +216,27 @@ input[type="radio"]{
 
 .dias {
   display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
   background-color: pink;
   border-radius: 15px;
   column-gap: 10px;
   width: 100%;
-  height: 400px;
+  height: fit-content;
   padding: 10px;  
 }
 
-.calendar {
-  background-color: whitesmoke;
-  border-radius: 15px;
-  width: 30%;
-  height: 400px;
-  min-width: 300px;
+#titulo-dia {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#horasEdias{
+  display: flex;
+  height: fit-content;
+  column-gap: 10px;
+  width: 100%;
 }
 
 .list-horas {
@@ -223,7 +246,7 @@ input[type="radio"]{
   background-color: whitesmoke;
   border-radius: 15px;
   column-gap: 10px;
-  width: 70%;
+  width: 75%;
   height: 380px;
 }
 

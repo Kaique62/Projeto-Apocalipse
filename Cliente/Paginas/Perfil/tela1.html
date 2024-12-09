@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tela1.css">
+    <link rel="stylesheet" href="../Calendario/index.css">
     <title>Tela Cliente</title>
 </head>
 <body>
     <div class="header">
-        <p style="font-size: 25px;"><b><u>HEADER DO CLIENTE</u></b></p>
-        <div id="icones">
-            <ion-icon name="person-circle-outline"></ion-icon>
-        </div>
+        <h1 style="font-size: 35px;">BeautyFlow!</h1>
+            <div>
+                <a href="../Perfil/tela1.html">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+            </div>
         </div>
         
         <div class="DIV_profissionais">
-<<<<<<< HEAD
+            <div class="titulos">
+                <h1>Profissionais:</h1>
+            </div>
             <input type="radio" name="profissionais" id="option-Kattlen" onclick="kattlen()">
             <label for="option-Kattlen" class="option option-Kattlen">
                 <div class="dot">
@@ -23,7 +28,7 @@
                 </div>
                 <span>Kattlen</span>
             </label>
-            
+
             <input type="radio" name="profissionais" id="option-Laila" onclick="laila()">
             <label for="option-Laila" class="option option-Laila">
                 <div class="dot">
@@ -31,21 +36,12 @@
                 </div>
                 <span>Laila</span>
             </label>
-=======
-            <div class="profissional">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxh-9wC95FiC8q2jwxgbmJ1XDZB-dqiP2kQ&s" alt="">
-                <p class="profissionais" >Katleen</p>
-            </div>
-
-            <div class="profissional">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxh-9wC95FiC8q2jwxgbmJ1XDZB-dqiP2kQ&s" alt="">
-                <p class="profissionais">Laila</p>
-            </div>
-                
->>>>>>> e7bc12dc43733d167380169b7bca4421497c849a
         </div>
-
+        
         <div class="DIV_procedimentos">
+            <div class="titulos">
+                <h1>Procedimentos:</h1>
+            </div>
             <input type="radio" name="procedimento" id="option-1" value="1" disabled style="visibility: visible;">
             <input type="radio" name="procedimento" id="option-2" value="2" disabled style="visibility: visible;">
             <input type="radio" name="procedimento" id="option-3" value="3" disabled style="visibility: visible;">
@@ -53,68 +49,75 @@
             <input type="radio" name="procedimento" id="option-5" value="5" disabled style="visibility: visible;">
             <input type="radio" name="procedimento" id="option-6" value="6" disabled style="visibility: visible;">
             
-            <label for="option-1" class="option option-1">
-                <div class="dot"></div>
+            <label for="option-1" class="option option-1" style="order: 1">
                 <span>Procedimento 1</span>
             </label>
 
-            <label for="option-2" class="option option-2">
-                <div class="dot"></div>
+            <label for="option-2" class="option option-2" style="order: 2">
                 <span>Procedimento 2</span>
             </label>
             
-            <label for="option-3" class="option option-3">
-                <div class="dot"></div>
+            <label for="option-3" class="option option-3" style="order: 3">
                 <span>Procedimento 3</span>
             </label>
             
-            <label for="option-4" class="option option-4">
-                <div class="dot"></div>
+            <label for="option-4" class="option option-4" style="order: 4">
                 <span>Procedimento 4</span>
             </label>
             
-            <label for="option-5" class="option option-5">
-                <div class="dot"></div>
+            <label for="option-5" class="option option-5" style="order: 5">
                 <span>Procedimento 5</span>
             </label>
 
-            <label for="option-6" class="option option-6">
-                <div class="dot"></div>
+            <label for="option-6" class="option option-6" style="order: 6">
                 <span>Procedimento 6</span>
             </label>
             
         </div>
-<<<<<<< HEAD
-        
-        <div class="calendarios">
-            <input type="date">
-            <input type="time">
-=======
 
         <div class="dias">
-            <div class="calendar"></div>
-            <div class="list-horas">
-                <div class="horas">
-                    <div class="titulo-dia"><h1>Dia: 03/10</h1></div>
-                    <div class="single-hour">
-                        <p>16:00</p>
-                    </div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                </div>
-                <div class="horas"></div>
+            <div id="titulo-dia">
+                <h1>Datas e Horarios</h1>
             </div>
->>>>>>> e7bc12dc43733d167380169b7bca4421497c849a
+            <div id="horasEdias">
+                <div class="calendar">
+                    <div id="MonthHeader">
+                        <div id="dataDiv" class="monthContent"> 
+                            12/2024
+                        </div>
+                        <button class="monthButton monthContent" onclick="changeMonth(-1)"><</button>
+                        <button class="monthButton monthContent" onclick="changeMonth(1)">></button>
+                    </div>
+                    <div id="DiasDaSemana"></div>
+                    <div id="DiasDoMes"></div>
+                </div>
+                
+                <div class="list-horas">
+                    <div class="horas">
+                        <div class="titulo-dia"><h1>Dia: 03/10</h1></div>
+                        <div class="single-hour">
+                            <p>16:00</p>
+                        </div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                        <div class="single-hour"></div>
+                    </div>
+                    <div class="horas"></div>
+                    <div class="horas"></div>
+                    <div class="horas"></div>
+                    <div class="horas"></div>
+                </div>
+            </div>
         </div>
-        
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="tela1.js"></script>
-    </body>
-</html>
+            
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <script src="tela1.js"></script>
+            <script src="../Calendario/index.js"></script>
+        </body>
+        </html>
