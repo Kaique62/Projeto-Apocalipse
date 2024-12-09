@@ -5,13 +5,12 @@ function kattlen() {
         else{
             document.getElementById("option-" + (i + 1)).disabled = true;
             document.getElementById("option-" + (i + 1)).checked = false;
-        }   
+        }
     }
 }
 
 function laila() {
     for (let i = 0; i < 6; i++){
-        console.log("option-" + (i + 1))
         if (i < 3){
             document.getElementById("option-" + (i + 1)).disabled = true;
             document.getElementById("option-" + (i + 1)).checked = false;
