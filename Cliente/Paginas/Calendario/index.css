@@ -47,12 +47,15 @@
 }
 
 #MonthHeader {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr;
     grid-column: 1/-1;
     padding: 0px;
-    grid-row: 1;
+    grid-row: 1;*/
 }
 
 .borderlessDown {
@@ -60,18 +63,31 @@
 }
 
 #dataDiv {
-    grid-column: 2/7;
     text-align: center;
     align-content: center;
     font-size: 25px;
 }
 
 .monthContent {
-    grid-row: 1;
+    display: flex;
+    flex-direction: row;
     border: none;
     border-bottom: 1px solid black;
 }
 
 .monthButton{
-    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+}
+
+.monthButton:hover {
+    cursor: pointer;
+    background-color: bisque;
+}
+
+#buttonsPassMouth {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
 }
