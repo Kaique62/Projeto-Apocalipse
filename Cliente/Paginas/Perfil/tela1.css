@@ -76,7 +76,7 @@ img{
   justify-content: flex-start;
 }
 
-#profissional_1{
+.DIV_profissionais .option{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,6 +87,8 @@ img{
   border-radius: 10px;
   height: 80px;
   width: 10%;
+  transition: all 0.3s ease;
+  gap: 10px;
 }
 
 .DIV_procedimentos{
@@ -117,6 +119,29 @@ img{
 
 input[type="radio"]{
     display: none;
+  }
+
+  #option-Kattlen:checked:checked ~ .option-Kattlen,
+  #option-Laila:checked:checked ~ .option-Laila{
+    border-color: #0069d9;
+    background: #0069d9;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen .dot,
+  #option-Laila:checked:checked ~ .option-Laila .dot{
+    background: #fff;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen .dot::before,
+  #option-Laila:checked:checked ~ .option-Laila .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .wrapper .option span{
+    font-size: 20px;
+    color: #808080;
+  }
+  #option-Kattlen:checked:checked ~ .option-Kattlen span,
+  #option-Laila:checked:checked ~ .option-Laila span{
+    color: #fff;
   }
   
   #option-1:checked:checked ~ .option-1,
