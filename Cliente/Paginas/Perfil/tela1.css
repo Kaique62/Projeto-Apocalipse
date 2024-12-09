@@ -39,16 +39,17 @@ ion-icon{
   height: 70px;
 }
 
-.DIV_profissionais{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: row;
-    gap: 30px;
-    background-color: pink;
-    border-radius: 15px;
-    width: 100%;
-    padding: 20px;
+.DIV_pp {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  background-color: pink;
+  border-radius: 15px;
+  width: 100%;
+  min-width: 25%;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
 .img{
@@ -58,38 +59,7 @@ ion-icon{
   background-color: #0069d9;
 }
 
-.DIV_profissionais .option{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  background-color: white;
-  font-size: 15px;
-  font-weight: 250px;
-  border-radius: 10px;
-  height: 80px;
-  width: 10%;
-  min-height: 40px;
-  min-width: 5%;
-  transition: all 0.4s ease;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.DIV_procedimentos{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 15px;
-    background-color: pink;
-    border-radius: 15px;
-    width: 100%;
-    min-width: 25%;
-    padding: 10px;
-    flex-wrap: wrap;
-}
-
-.DIV_procedimentos .option{
+.DIV_pp .option{
   background: #f5f5f7;
   height: 80px;
   width: 10%;
@@ -153,6 +123,7 @@ input[type="radio"]{
 
 #horasEdias{
   display: flex;
+  flex-direction: row;
   height: fit-content;
   column-gap: 10px;
   width: 100%;
@@ -162,12 +133,9 @@ input[type="radio"]{
   display: flex;
   flex-direction: row;
   padding: 10px;
-  background-color: whitesmoke;
   border-radius: 15px;
   column-gap: 10px;
-  width: 75%;
   height: 380px;
-  min-width: 35%;
   min-height: 380px;
 }
 
@@ -190,7 +158,10 @@ input[type="radio"]{
   background-color: greenyellow;
   z-index: 2;
 }
-
+.single-hour:hover{
+  cursor: pointer;
+  background-color: rgb(130, 194, 34);
+}
 .titulo-dia {
   background-color: pink;
   width: 100%;
