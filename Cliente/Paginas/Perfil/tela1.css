@@ -69,11 +69,18 @@ ion-icon{
     padding: 10px;
 }
 
-img{
+.img{
   display: flex;
   width: 100px;
   align-items: flex-start;
   justify-content: flex-start;
+  border-radius: 10px;
+  background-size: cover;
+  background-color: #0069d9;
+}
+
+.dot{
+  background-color: #0069d9;
 }
 
 .DIV_profissionais .option{
