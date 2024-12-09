@@ -5,7 +5,6 @@ function kattlen() {
         else{
             document.getElementById("option-" + (i + 1)).disabled = true;
             document.getElementById("option-" + (i + 1)).checked = false;
-            console.log(document.getElementById("option-" + (i + 1)).style)
         }   
     }
 }
@@ -23,5 +22,3 @@ function laila() {
         }
     }
 }
-
-
