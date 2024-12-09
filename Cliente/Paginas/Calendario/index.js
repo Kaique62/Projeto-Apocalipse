@@ -128,6 +128,7 @@ function selectDay(dia, grid) {
       document.getElementById(lastSelectedGrid).style.backgroundColor = "transparent";
       dataDiv.innerHTML = dia + "/" + mes + "/" + ano;
       document.getElementById(grid).style.backgroundColor = "lightblue";
+      document.getElementById(grid).style.borderRadius = "8px";
       lastSelectedGrid = grid;
   }
 }

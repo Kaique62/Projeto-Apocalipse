@@ -5,7 +5,6 @@ function kattlen() {
         else{
             document.getElementById("option-" + (i + 1)).disabled = true;
             document.getElementById("option-" + (i + 1)).checked = false;
-            document.getElementById("option-" + (i + 1)).style.background = 'gray'
         }
     }
 }
