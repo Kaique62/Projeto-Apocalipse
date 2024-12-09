@@ -1,0 +1,27 @@
+function kattlen() {
+    for (let i = 0; i < 6; i++){
+        if (i < 3)
+            document.getElementById("option-" + (i + 1)).disabled = false;
+        else{
+            document.getElementById("option-" + (i + 1)).disabled = true;
+            document.getElementById("option-" + (i + 1)).checked = false;
+            console.log(document.getElementById("option-" + (i + 1)).style)
+        }   
+    }
+}
+
+function laila() {
+    for (let i = 0; i < 6; i++){
+        console.log("option-" + (i + 1))
+        if (i < 3){
+            document.getElementById("option-" + (i + 1)).disabled = true;
+            document.getElementById("option-" + (i + 1)).checked = false;
+        }
+        else {
+            document.getElementById("option-" + (i + 1)).disabled = false;
+            document.getElementById("option-" + (i + 1)).checked = false;
+        }
+    }
+}
+
+

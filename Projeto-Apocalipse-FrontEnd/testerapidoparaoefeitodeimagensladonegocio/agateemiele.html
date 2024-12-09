@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <title>EFEITO TOP</title>
+</head>
+<body>
+    <div class="container">
+        <div id="picture" class="one"></div>
+        <ul>
+            <li rel="one" ><a href="#"></a></li>
+            <li rel="two" ><a href="#">HOME</a></li>
+            <li rel="three" ><a href="#">SERVIÇOS</a></li>
+            <li rel="four" ><a href="#">PARCEIROS</a></li>
+            <li rel="five" ><a href="#">CONTATO</a></li>
+            <li rel="six" ><a href="#">SAC</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        document.querySelectorAll('ul li').forEach(function(listItem){
+           listItem.addEventListener('mouseenter', function(){
+            let relClass = this.getAttribute('rel');
+            let picture = document.getElementById('picture')
+            picture.className = '';
+            picture.classList.add(relClass);
+            this.classList.add(active);
+            this.parentElement.querySelectorAll('li').forEach(
+                function(sibiling){
+                    if (sibiling !== listItem){
+                        sibiling.classList.remove('active');
+                    }
+                }
+            )
+           }) 
+        })
+    </script>
+    
+</body>
+</html>
