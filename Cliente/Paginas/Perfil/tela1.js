@@ -1,3 +1,6 @@
+var last = null;
+var hour_select;
+
 function kattlen() {
     for (let i = 0; i < 6; i++){
         if (i < 3)
@@ -45,26 +48,36 @@ function createHourAtDays() {
     for (let i = 0; i < days.length; i++) {
         let b = document.createElement('div');
         b.className = 'label-dia';
-        if (i == 0)
+        if (i == 0) {
             b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1) + " (Hoje)"; 
-        else
-        b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1); 
+            b.id = 'd1';
+        }
+        else {
+            b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1); 
+        }
     
         days[i].appendChild(b);
 
         for (let j = 0; j < hours.length; j++) {
             let a = document.createElement('div');
-            a.className = 'single-hour';
+            a.className = 'single-hour verde';
             a.textContent = hours[j]
-            a.id = 'h-' + j;
-            a.onclick = `change('h-${j}')`;
+            a.id = 'h-' + j + '-' + i;
+            a.addEventListener('click', () => change(`h-${j}-${i}`));
             days[i].appendChild(a)    
         }
     }
 }
 
 function change(id) {
-    document.getElementById(id).style.backgroundColor =
-    document.getElementById(id).style.backgroundColor ? '#0f0': 'rgb(130, 194, 34)';
+    let element = document.getElementById(id);
+    element.getAttribute("class") == "single-hour verde2" ? element.setAttribute("class", "single-hour verde"): element.setAttribute("class", "single-hour verde2");
+
+    if (last != null) {
+        document.getElementById(last).className = "single-hour verde"
+    }
+    hour_select = element.textContent + '|' + element.parentElement.getElementsByClassName('label-dia')[0].textContent;
+    console.log(hour_select);
+    last = id;
 }
 createHourAtDays()

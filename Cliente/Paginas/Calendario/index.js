@@ -126,8 +126,9 @@ function selectDay(dia, grid) {
   if (dia != ""){
     if (lastSelectedGrid != null)
       document.getElementById(lastSelectedGrid).style.backgroundColor = "transparent";
+
       dataDiv.innerHTML = dia + "/" + mes + "/" + ano;
-      document.getElementById('d1').textContent = dia + "/" + mes;
+      document.getElementById('d1').textContent = dia + "/" + mes + ' (Selec.)';
       document.getElementById(grid).style.backgroundColor = "lightblue";
       document.getElementById(grid).style.borderRadius = "8px";
       lastSelectedGrid = grid;
