@@ -1,13 +1,12 @@
 .calendar {
     display: grid;
-    border-radius: 15px;
     aspect-ratio: 8/6;
     min-width: 200px;
     max-width: fit-content - 4px;
     grid-template: 12.5% 12.5% 75% / auto;
     background-color: #F9F5FF;
     padding: 0px;
-    width: 25%;
+    width: 60%;
 }
 
 #DiasDaSemana {

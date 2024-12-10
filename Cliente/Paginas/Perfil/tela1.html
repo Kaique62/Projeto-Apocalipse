@@ -8,14 +8,14 @@
     <title>Tela Cliente</title>
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1 style="font-size: 35px;">BeautyFlow!</h1>
             <div>
                 <a href="../Perfil/tela1.html">
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </a>
             </div>
-        </div>
+    </header>
         
     <div class="DIV_pp">
         <div class="titulos">
@@ -45,27 +45,27 @@
         <input type="radio" name="procedimento" id="option-5" value="5" disabled style="visibility: visible;">
         <input type="radio" name="procedimento" id="option-6" value="6" disabled style="visibility: visible;">
         
-        <label for="option-1" class="option option-1" style="order: 1">
+        <label for="option-1" class="option option-1">
             <span>Procedimento 1</span>
         </label>
 
-        <label for="option-2" class="option option-2" style="order: 2">
+        <label for="option-2" class="option option-2">
             <span>Procedimento 2</span>
         </label>
         
-        <label for="option-3" class="option option-3" style="order: 3">
+        <label for="option-3" class="option option-3">
             <span>Procedimento 3</span>
         </label>
         
-        <label for="option-4" class="option option-4" style="order: 4">
+        <label for="option-4" class="option option-4">
             <span>Procedimento 4</span>
         </label>
         
-        <label for="option-5" class="option option-5" style="order: 5">
+        <label for="option-5" class="option option-5">
             <span>Procedimento 5</span>
         </label>
 
-        <label for="option-6" class="option option-6" style="order: 6">
+        <label for="option-6" class="option option-6">
             <span>Procedimento 6</span>
         </label>
     </div>
@@ -74,40 +74,38 @@
         <div id="titulo-dia">
             <h1>Datas e Horarios</h1>
         </div>
+
         <div id="horasEdias">
-            <div class="calendar">
-                <div id="MonthHeader">
-                    <div id="dataDiv" class="monthContent"> 
-                        12/2024
+            <div id="select-calender">
+                <div class="calendar">
+                    <div id="MonthHeader">
+                        <div id="dataDiv" class="monthContent"> 
+                            12/2024
+                        </div>
+                        <div id="buttonsPassMouth">
+                            <button class="monthButton monthContent" onclick="changeMonth(-1)"><</button>
+                            <button class="monthButton monthContent" onclick="changeMonth(1)">></button>
+                        </div>
                     </div>
-                    <div id="buttonsPassMouth">
-                        <button class="monthButton monthContent" onclick="changeMonth(-1)"><</button>
-                        <button class="monthButton monthContent" onclick="changeMonth(1)">></button>
-                    </div>
+                    <div id="DiasDaSemana"></div>
+                    <div id="DiasDoMes"></div>
                 </div>
-                <div id="DiasDaSemana"></div>
-                <div id="DiasDoMes"></div>
+
+                <div id="select-day">
+                </div>
             </div>
-            
+
             <div class="list-horas">
-                <div class="horas">
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                    <div class="single-hour"></div>
-                </div>
-                <div class="horas"></div>
-                <div class="horas"></div>
-                <div class="horas"></div>
-                <div class="horas"></div>
+                <div id="d2" class="horas"></div>
+                <div id="d3" class="horas"></div>
+                <div id="d4" class="horas"></div>
+                <div id="d5" class="horas"></div>
             </div>
         </div>
     </div>
-    
+    <div class="DIV_pp" id="final">
+        <h2>Fazer a Consulta</h2>
+    </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="tela1.js"></script>

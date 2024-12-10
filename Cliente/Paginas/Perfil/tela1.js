@@ -7,6 +7,15 @@ function kattlen() {
             document.getElementById("option-" + (i + 1)).checked = false;
         }
     }
+
+    let obj = {"name":'kaique', "gender":'E', "convenience_state":'um', "convenience_list": 'bobao'};
+    fetch('http://172.16.30.52/', {
+        method: "POST",
+        body: JSON.stringify(obj),
+        headers: {
+            'content-type': "application/json; charset=UTF-8",
+        }
+    });
 }
 
 function laila() {
@@ -21,3 +30,41 @@ function laila() {
         }
     }
 }
+
+function createHourAtDays() {
+    let today = new Date;
+    let days = [
+        document.getElementById('select-day'),
+        document.getElementById('d2'),
+        document.getElementById('d3'),
+        document.getElementById('d4'),
+        document.getElementById('d5')
+    ];
+    let hours = ["13:30", "14:00", '14:30', "15:00", "15:30", "16:00", "16:30", "17:00"];
+
+    for (let i = 0; i < days.length; i++) {
+        let b = document.createElement('div');
+        b.className = 'label-dia';
+        if (i == 0)
+            b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1) + " (Hoje)"; 
+        else
+        b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1); 
+    
+        days[i].appendChild(b);
+
+        for (let j = 0; j < hours.length; j++) {
+            let a = document.createElement('div');
+            a.className = 'single-hour';
+            a.textContent = hours[j]
+            a.id = 'h-' + j;
+            a.onclick = `change('h-${j}')`;
+            days[i].appendChild(a)    
+        }
+    }
+}
+
+function change(id) {
+    document.getElementById(id).style.backgroundColor =
+    document.getElementById(id).style.backgroundColor ? '#0f0': 'rgb(130, 194, 34)';
+}
+createHourAtDays()
