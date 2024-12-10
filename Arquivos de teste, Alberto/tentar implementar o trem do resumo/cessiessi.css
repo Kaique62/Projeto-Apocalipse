@@ -21,7 +21,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 135, 191);
+    background-color: rgb(255, 94, 169);
     color: white;
     width: 100%;
     padding: 15px;
@@ -33,7 +33,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 135, 191);
+    background-color: rgb(255, 94, 169);
     color: rgb(0, 0, 0);
     width: 100%;
     padding: 15px;
@@ -91,11 +91,10 @@ footer {
     padding: 35px;
     background-color: pink;
     border-radius: 15px;
-    gap: 10px;
+    gap: 20px;
     margin-top: 0px;
-    flex-wrap: wrap;
     margin-bottom: 20px; /* Distância da parte inferior */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .para1 {
@@ -107,7 +106,7 @@ footer {
     padding: 20px;
     margin-top: 20px; 
     margin-bottom: 20px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .para2 {
@@ -119,7 +118,7 @@ footer {
     padding: 20px;
     margin-top: 20px; 
     margin-bottom: 20px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .container {
@@ -202,7 +201,6 @@ footer {
 }
 
 
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -230,68 +228,3 @@ footer {
 }
 
 
-.kattlen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    padding-top: 1px;
-    padding-left: 60px;
-    padding-bottom: 40px;
-    flex-direction: column;
-}
-
-.laila{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-top: 1px;
-    padding-left: 150px;
-    flex-direction: column;
-    padding-bottom: 48px;
-    flex-wrap: wrap;
-}
-
-.laaila{
-    display: flex;
-    justify-content: center;
-    text-align: justify;
-    height: 80px;
-    width: 290px;
-}
-
-.kattlenn{
-    display: flex;
-    justify-content: center;
-    text-align: justify;
-    height: 80px;
-    width: 290px;
-}
-
-
-.backdoporque{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: pink;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.chata{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: pink;
-    border-radius: 15px;
-    padding: 20px;
-    padding-left: 50px;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
