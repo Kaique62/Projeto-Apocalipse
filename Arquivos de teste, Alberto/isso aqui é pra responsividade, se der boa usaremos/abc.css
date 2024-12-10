@@ -228,3 +228,118 @@ footer {
 }
 
 
+
+.chatbot-button {
+    position: fixed;
+    inset-block-end: 20px;
+    inset-inline-end: 20px;
+    background-color: rgb(212, 38, 120);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 2px 0 5px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Estilo da janela do chatbot */
+.chatbot-window {
+    display: none;
+    position: fixed;
+    inset-block-end: 70px;
+    inset-inline-end: 20px;
+    inline-size: 300px;
+    block-size: 500px;
+    background-color: rgb(255, 135, 191);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 999;
+}
+
+/* Estilo do título da janela */
+.chatbot-header {
+    text-align: center;
+    font-size: 18px;
+    margin-block-end: 20px;
+    color: white;
+}
+
+/* Estilo das opções de perguntas */
+.options-list {
+    list-style-type: none;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.options-list li {
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.options-list li:hover{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(207, 0, 128);
+    
+    color: white;
+}
+
+
+/* Estilo da área de respostas */
+.chatbot-response {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    margin-block-start: 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    gap: 10px;
+    background-color: white;
+}
+
+/* Estilo do botão fechar */
+.close-button {
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+}
+
+/* Estilo do campo de input para perguntas */
+.user-input {
+    inline-size: 93%;
+    padding: 10px;
+    margin-block-start: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Estilo do botão enviar */
+.send-button {
+    inline-size: 100%;
+    padding: 10px;
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-block-start: 10px;
+}
