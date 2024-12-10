@@ -11,6 +11,14 @@ body{
     overflow: hidden; /* Hide scrollbars */
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 135, 191);
+    width: 100%;
+    border-radius: 30px;
+}
+
 /*Informações do Login*/
 
 #login{
@@ -19,13 +27,13 @@ body{
     align-self: center;
     position: absolute;
     left: 200px;
-    bottom: 200px;
+    bottom: 125px;
     gap: 50px;
     background-color: #ffffff;
     padding: 40px;
     min-width: 200px;
     width: 400px;
-    min-height: 400px;
+    min-height: 300px;
     border-radius: 30px;
     border: 2px solid black;
     margin-bottom: 200px;
@@ -49,7 +57,7 @@ body{
 }
   
 .inputForm {
-    border-radius: 16px;
+    border-radius: 15px;
     width: 350px;
     height: 50px;
     border: 1px black solid ;
@@ -57,9 +65,9 @@ body{
     align-items: center;
     padding-left: 10px;
     transition: 0.05s ease-in-out;
-    justify-content: center;
+    justify-content: space-between;
 }
-  
+
 .input {
     margin-left: 20px;
     border-radius: 15px;
@@ -70,10 +78,6 @@ body{
   
 .input:focus {
     outline: none;
-}
-
-.inputForm:focus-within {
-    border: 2px solid #2d79f3;
 }
   
 .flex-row {
@@ -147,10 +151,10 @@ body{
     display: none;
     flex-direction: column;
     position: absolute;
-    left: 10px;
-    bottom: 200px;
+    left: 100px;
+    bottom: 100px;
     z-index: 1;
-    gap: 50px;
+    gap: 40px;
     background-color: #ffffff;
     padding: 40px;
     min-height: 250px;
@@ -159,11 +163,48 @@ body{
     border: 2px solid black;
 }
 
-#sexos{
+#inputFormName{
+    border-radius: 15px;
+    width: 98%;
+    height: 50px;
+    border: 1px black solid ;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.05s ease-in-out;
+    justify-content: space-between;
+}
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#registerSexos{
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    padding-left: 80px;
+}
+
+#masculino{
+    display: flex;
+    flex-direction: column;
+}
+
+#feminino{
+    display: flex;
+    flex-direction: column;
+}
+
+#optionSexos{
+    display: flex;
+    justify-content: start;
     align-items: start;
-    justify-content: center;
+    gap: 10px;
 }
 
 ion-icon{
@@ -190,5 +231,12 @@ ion-icon{
     margin-left: 450px;
     margin-right: -50px;
     margin-top: -50px;
-
 }
+
+@media screen and (min-width: 320px) and (max-width: 950px){
+    #triangle {
+        width: 0px;
+        height: 0px;
+        background-image: none;
+    }
+  }

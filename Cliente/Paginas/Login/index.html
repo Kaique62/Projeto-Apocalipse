@@ -8,14 +8,20 @@
     <link rel="shortcut icon" href="https://ugc.production.linktr.ee/yuPrbErFQIy62s9GlKdT_DV71XG5Lq7TNhRRh" type="image/x-icon">
 </head>
 <body>
+
+    
   
 <div id="login">
+    <header>
+        <h1>BeautyFlow</h1>
+    </header>
     <div class="form">
         <div class="flex-column">
         <label>Email </label></div>
         <div class="inputForm">
-            <ion-icon name="at-outline"></ion-icon>  
+            <ion-icon name="at-outline"></ion-icon>
             <input type="text" class="input" placeholder="Insira seu Email" id="userLogin">
+            <p></p>
         </div>
 
         <div class="flex-column">
@@ -39,74 +45,97 @@
 </div>
 
 <div id="cadastrar">
+    <header>
+        <h1>BeautyFlow</h1>
+    </header>
     <div class="form">
-        <div class="flex-column">
-        <label>Nome</label></div>
-        <div class="inputForm">
-            <ion-icon name="person-outline"></ion-icon>
-            <input type="text" class="input" placeholder="Insira seu Nome" id="nameCadastro">
+        <div class="register">
+            <div class="flex-column">
+            <label>Nome</label></div>
+            <div id="inputFormName">
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" class="input" placeholder="Insira seu Nome" id="nameCadastro">
+                <p></p>
+            </div>
         </div>
 
+        <p></p>
+
         <div class="flex-row">
-            <div class="flex-column">
-                <label>Sexo:</label>
-            </div>
-                <div id="sexos">
-                    <div class="flex-row">
-                        <input type="radio" id="sexoMascCadastro" name="genero" value="Masculino"><label for="sexoMascCadastro">Masculino</label>
+            <div id="registerSexos">
+                <div class="flex-column">
+                    <label>Gênero:</label>
+                </div>
+                <div id="optionSexos">
+                    <div id="masculino">
+                        <label for="sexoMascCadastro">Masculino</label><input type="radio" id="sexoMascCadastro" name="genero" value="Masculino">
                     </div>
-        
-                    <div class="flex-row">
-                        <input type="radio" id="sexoFemCadastro" name="genero" value="Feminino"><label for="sexoFemCadastro">Feminino</label>
-                    </div>
-        
-                    <div class="flex-row">
-                        <input type="radio" id="sexoOutroCadastro" name="genero" value="Outro"><label for="sexoOutroCadastro">Outro.</label>
+
+                    <p></p>
+            
+                    <div id="feminino">
+                        <label for="sexoFemCadastro">Feminino</label><input type="radio" id="sexoFemCadastro" name="genero" value="Feminino">
                     </div>
                 </div>
-    
-            <div class="flex-column">
-                <label>Data de Nascimento</label>
             </div>
-            <div class="inputForm">
-                <ion-icon name="calendar-outline"></ion-icon>
-                <input type="date" class="input" placeholder="Insira sua Senha" id="nascimentoCadastro">
-            </div>
-        </div>
-
-
-        <div class="flex-row">
-            <div class="flex-column">
-            <label>Telefone </label></div>
-            <div class="inputForm">
-                <ion-icon name="call-outline"></ion-icon>
-                <input type="text" class="input" placeholder="(xx)x xxxx-xxxx" id="telefoneCadastro">
-            </div>
-    
-            <div class="flex-column">
-            <label>Email </label></div>
-            <div class="inputForm">
-                <ion-icon name="at-outline"></ion-icon>  
-                <input type="text" class="input" placeholder="Insira seu Email" id="emailCadastro">
+                
+            <div class="register">
+                <div class="flex-column">
+                    <label>Data de Nascimento</label>
+                </div>
+                <div class="inputForm">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <input type="date" class="input" placeholder="Insira sua Senha" id="nascimentoCadastro">
+                    <p></p>
+                </div>
             </div>
         </div>
 
+        <p></p>
 
         <div class="flex-row">
-            <div class="flex-column">
-            <label>Insira sua senha</label></div>
-            <div class="flex-row inputForm">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" class="input" placeholder="Insira sua Senha" id="passwordCadastro">
-                <ion-icon name="eye-off-outline" id="VendoCadastroPass" onclick="PasswordVisibility('passwordCadastro')" class="passwordCadastro"></ion-icon>
+            <div class="register">
+                <div class="flex-column">
+                    <label>Telefone </label></div>
+                <div class="inputForm">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <input type="text" class="input" placeholder="(xx)x xxxx-xxxx" id="telefoneCadastro">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="register">
+                <div class="flex-column">
+                <label>Email </label></div>
+                <div class="inputForm">
+                    <ion-icon name="at-outline"></ion-icon>  
+                    <input type="text" class="input" placeholder="Insira seu Email" id="emailCadastro">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="flex-row">
+            <div class="register">
+                <div class="flex-column">
+                    <label>Insira sua senha</label></div>
+                <div class="flex-row inputForm">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" class="input" placeholder="Insira sua Senha" id="passwordCadastro">
+                    <ion-icon name="eye-off-outline" id="VendoCadastroPass" onclick="PasswordVisibility('passwordCadastro')" class="passwordCadastro"></ion-icon>
+                </div>
             </div>
     
-            <div class="flex-column">
-            <label>Confirme sua Senha</label></div>
-            <div class="inputForm">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" class="input" placeholder="Confirme sua Senha" id="confirmPasswordCadastro">
-                <ion-icon name="eye-off-outline" id="vendoCadastroConfir" onclick="PasswordVisibility('confirmPasswordCadastro')" class="confirmPasswordCadastro"></ion-icon>
+            <div class="register">
+                <div class="flex-column">
+                <label>Confirme sua Senha</label></div>
+                <div class="inputForm">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" class="input" placeholder="Confirme sua Senha" id="confirmPasswordCadastro">
+                    <ion-icon name="eye-off-outline" id="vendoCadastroConfir" onclick="PasswordVisibility('confirmPasswordCadastro')" class="confirmPasswordCadastro"></ion-icon>
+                </div>
             </div>
         </div>
         
