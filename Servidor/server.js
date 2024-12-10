@@ -2,9 +2,15 @@ const express = require("express");
 const paths = require("./paths");
 const db = require("./database.js")
 const fs= require('fs')
+const cors = require('cors')
+const bodyparser = require("body-parser");
+const { stringify } = require("querystring");
 
 var app = express();
 const port = 3000;
+
+app.use(bodyparser.json({limit: "50mb"}))
+app.use(cors())
 
 app.use(express.static("Cliente/Paginas"))
 
@@ -26,7 +32,7 @@ app.get('/agendamento', (req, res) => {
 
 app.get('/clientes', (req, res) => {  
     try {
-        const results = select();
+        const results = db.Select();
         res.json(results);
     } catch (err) {
         console.error(err);
@@ -34,8 +40,11 @@ app.get('/clientes', (req, res) => {
     }
 });
 
-app.get('/upload', (req, res) =>{
-    
+app.post('/upload', (req, res) =>{
+    const infos = req.body
+    if (infos.type == "add")
+       db.UpInsert(`INSERT INTO clientes (Nome, Idade, UF) VALUES(?, ?, ?)`, [infos.Name, infos.Idade, infos.UF])
+
 })
 
 

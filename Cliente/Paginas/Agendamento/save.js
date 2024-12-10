@@ -1,16 +1,15 @@
-function usefetch(obj){
+function insert(){
     fetch('http://localhost:3000/upload', {
         method: "POST",
-        body: JSON.stringify(obj),
+        body: JSON.stringify({
+            "Name": document.getElementById("Nome").value, 
+            "Idade": document.getElementById("Idade").value, 
+            "UF":document.getElementById("UF").value, 
+            "type": "add"
+        }),
         headers: {
             'content-type': "application/json; charset=UTF-8",
         }
     });
 }
-function insert(){
-    a = document.getElementById("Nome");
-    b = document.getElementById("Idade");
-    c = document.getElementById("UF");
-    let obj = {"Name": a, "Idade": b, "UF": c, "type": "add"}
-    usefetch(obj)
-}
+
