@@ -1,4 +1,3 @@
-const db = require('./db');
 
 function botar(){
     a = document.getElementById("Nome");

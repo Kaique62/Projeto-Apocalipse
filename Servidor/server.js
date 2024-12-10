@@ -1,5 +1,6 @@
 const express = require("express");
-const paths = require("./paths")
+const paths = require("./paths");
+const db = require("./database.js")
 
 var app = express();
 const port = 3000;
@@ -20,6 +21,16 @@ app.get('/perfil', (req, res) => {
 
 app.get('/agendamento', (req, res) => {
     res.sendFile(paths.getPage("Agendamento"));
+});
+
+app.get('/clientes', async (req, res) => {  
+    try {
+        const results = await selectCustomers();
+        res.json(results);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Erro ao buscar clientes.');
+    }
 });
 
 app.listen(port);
