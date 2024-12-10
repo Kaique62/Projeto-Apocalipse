@@ -86,15 +86,33 @@ footer {
     background-color: pink;
     border-radius: 15px;
     gap: 20px;
+    margin-top: 40px; /* Distância do topo */
+    margin-bottom: 40px; /* Distância da parte inferior */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.para1, .para2 {
+.para1 {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: pink;
     border-radius: 15px;
     padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.para2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .container {
@@ -115,7 +133,7 @@ footer {
     height: auto; 
     min-height: 500px; 
     max-height: 800px; 
-    background: white;
+    background-image: url('https://img.freepik.com/vetores-premium/modelo-de-conjunto-de-design-de-logotipo-de-salao-de-beleza_76712-436.jpg');
     border-radius: 15px;
     background-size: cover;
     background-position: center; 
@@ -123,6 +141,11 @@ footer {
     z-index: 10;
 }
 
+
+.container #show.principal {
+    background: url('https://img.freepik.com/vetores-premium/modelo-de-conjunto-de-design-de-logotipo-de-salao-de-beleza_76712-436.jpg');
+    background-size: cover;
+}
 
 .container #show.one {
     background: url('https://www.drhomeroferraro.com.br/wp-content/uploads/2019/08/302315-harmonizacao-facial-entenda-como-e-feito-o-procedimento.jpg');
@@ -160,6 +183,14 @@ footer {
     z-index: 5; 
 }
 
+.por_que{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
+
 
 @media (max-width: 768px) {
     .container {
@@ -186,3 +217,5 @@ footer {
         font-size: 12px;
     }
 }
+
+
