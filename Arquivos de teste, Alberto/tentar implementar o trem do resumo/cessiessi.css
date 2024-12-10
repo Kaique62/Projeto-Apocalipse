@@ -21,7 +21,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 135, 191);
+    background-color: rgb(255, 94, 169);
     color: white;
     width: 100%;
     padding: 15px;
@@ -33,7 +33,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 135, 191);
+    background-color: rgb(255, 94, 169);
     color: rgb(0, 0, 0);
     width: 100%;
     padding: 15px;
@@ -228,40 +228,3 @@ footer {
 }
 
 
-.kattlen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    padding-left: 60px;
-    padding-bottom: 40px;
-    flex-direction: column;
-}
-
-.laila{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-left: 120px;
-    flex-direction: column;
-    padding-bottom: 23px;
-    flex-wrap: wrap;
-}
-
-.laaila{
-    display: flex;
-    justify-content: center;
-    text-align: justify;
-    height: 80px;
-    width: 290px;
-}
-
-.kattlenn{
-    display: flex;
-    justify-content: center;
-    text-align: justify;
-    height: 80px;
-    width: 290px;
-}
