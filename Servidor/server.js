@@ -1,6 +1,7 @@
 const express = require("express");
 const paths = require("./paths");
 const db = require("./database.js")
+const fs= require('fs')
 
 var app = express();
 const port = 3000;
@@ -23,15 +24,20 @@ app.get('/agendamento', (req, res) => {
     res.sendFile(paths.getPage("Agendamento"));
 });
 
-app.get('/clientes', async (req, res) => {  
+app.get('/clientes', (req, res) => {  
     try {
-        const results = await selectCustomers();
+        const results = select();
         res.json(results);
     } catch (err) {
         console.error(err);
         res.status(500).send('Erro ao buscar clientes.');
     }
 });
+
+app.get('/upload', (req, res) =>{
+    
+})
+
 
 app.listen(port);
 console.log("Server Running on localhost:" + port);
