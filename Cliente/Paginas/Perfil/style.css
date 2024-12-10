@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(171, 223, 223);
+    padding: 10px;
+    row-gap: 10px;
+    min-width: 410px;
+}
+
+#infoPessoais{
+    display: flex;
+    flex-direction: row;
+}
+
+#infoConta{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 99%;
+    height: 100px;
+    background-color: #ee91ad;
+    border-radius: 15px;
+}
+
+ion-icon{
+    width: 300px;
+    height: 300px;
+    color: #ee91ad;
+}
+
+#fotoPerfil{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+#informacoesEdicao{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 99%;
+    height: 300px;
+    background-color: #ee91ad;
+    border-radius: 15px;
+}
+
+#minhasConsultas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 10px;
+    background-color: #ee91ad;
+    width: 99%;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.consultas{
+    width: 10%;
+    height: 90%;
+    background-color: #f5f5f7;
+    border-radius: 20px;
+}
+
+#historicos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: #ee91ad;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 99%;
+    height: 230px;
+    border-radius: 15px;
+}
+
+.historico{
+    background-color: #f5f5f7;
+    width: 20%;
+    height: 200px;
+    border-radius: 15px;
+}
