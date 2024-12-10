@@ -91,10 +91,11 @@ footer {
     padding: 35px;
     background-color: pink;
     border-radius: 15px;
-    gap: 20px;
+    gap: 10px;
     margin-top: 0px;
+    flex-wrap: wrap;
     margin-bottom: 20px; /* Distância da parte inferior */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .para1 {
@@ -106,7 +107,7 @@ footer {
     padding: 20px;
     margin-top: 20px; 
     margin-bottom: 20px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .para2 {
@@ -118,7 +119,7 @@ footer {
     padding: 20px;
     margin-top: 20px; 
     margin-bottom: 20px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
 }
 
 .container {
@@ -201,6 +202,7 @@ footer {
 }
 
 
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -234,6 +236,7 @@ footer {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    padding-top: 1px;
     padding-left: 60px;
     padding-bottom: 40px;
     flex-direction: column;
@@ -244,9 +247,10 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding-left: 120px;
+    padding-top: 1px;
+    padding-left: 150px;
     flex-direction: column;
-    padding-bottom: 23px;
+    padding-bottom: 48px;
     flex-wrap: wrap;
 }
 
@@ -264,4 +268,30 @@ footer {
     text-align: justify;
     height: 80px;
     width: 290px;
+}
+
+
+.backdoporque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chata{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
