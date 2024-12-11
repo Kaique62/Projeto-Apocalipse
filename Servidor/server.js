@@ -30,19 +30,7 @@ app.get('/agendamento', (req, res) => {
     res.sendFile(paths.getPage("Agendamento"));
 });
 
-app.get('/clientes',async (req, res) => {  
-    try {
-        const results = await db.Select();
-        console.log(results)
-        res.json(results);
-    } catch (error) {
-        console.error('Erro ao buscar clientes:', error);
-        res.status(500).json({ error: 'Erro ao buscar clientes.' });
-    }
-});
-
-
-app.post('/upload', (req, res) =>{
+app.post('/upload', async (req, res) =>{
     const infos = req.body
     if (infos.type == "add"){
         db.UpInsert(`INSERT INTO clientes (Nome, Idade, UF) VALUES(?, ?, ?)`, [infos.Name, infos.Idade, infos.UF])
@@ -53,10 +41,21 @@ app.post('/upload', (req, res) =>{
     else if (infos.type == "update"){
         db.Update(`UPDATE clientes SET Idade = ? Where Nome = ?`, [infos.Idade, infos.Name])
     }
+    else if (infos.type == "select"){
+        try {
+            const rows = await db.Select(`SELECT * FROM clientes_profissional WHERE email = ? AND senha = ?`, [infos.userLogin, infos.passwordLogin])
+            console.log(rows)
+            if (rows.length > 0){
+                console.log("ab")
+            }
+        } catch (error) {
+            console.error('Erro no SELECT:', error.message);
+
+        }
+    }
+
 
 })
-
-
 
 app.listen(port);
 console.log("Server Running on localhost:" + port);

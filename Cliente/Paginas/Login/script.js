@@ -1,5 +1,6 @@
 var usuariosCadastrados = {};
 
+<<<<<<< Updated upstream
 var triangleImage = document.getElementById("triangle");
 
 function resizeTriangle() {
@@ -386,6 +387,42 @@ function changeMode_2(tela_mudança, acao = "") {
 function changeMode(){
     document.getElementById("cadastrar").style.display = document.getElementById("cadastrar").style.display == "flex" ? "none": "flex"
     document.getElementById("login").style.display = document.getElementById("login").style.display == "none" ? "flex": "none"
+=======
+function cadastrar(){
+    let informationID = ["emailCadastro", "passwordCadastro", "nameCadastro", "nascimentoCadastro", "generoCadastro", "telefoneCadastro"]
+    let dicionario = {}
+    
+    for (let i = 0; i < informationID.length; i++){
+        if (document.getElementById(informationID[i]).value.trim() == "");
+        console.log("Preencha Todos os Campos!");
+
+        dicionario[informationID[i]] = document.getElementById(informationID[i]).value;
+    };
+    dicionario["type"] = "cadastro"
+    console.log(dicionario);
+}
+function login(){
+    let user = document.getElementById("userLogin").value;
+    let senha = document.getElementById("passwordLogin").value;
+ 
+    if (user.trim() == "" | senha.trim() == ""){
+        console.log("Preencha Todos os Campos!");
+    }
+    else {
+        fetch('http://localhost:3000/upload', {
+            method: "POST",
+            body: JSON.stringify({
+                "userLogin": document.getElementById("userLogin").value, 
+                "passwordLogin": document.getElementById("passwordLogin").value,  
+                "type": "select"
+            }),
+            headers: {
+                'content-type': "application/json; charset=UTF-8",
+            }
+        });
+        
+    }
+>>>>>>> Stashed changes
 }
 
 function PasswordVisibility(id){
