@@ -244,20 +244,20 @@ footer {
     z-index: 1000;
 }
 
-/* Estilo da janela do chatbot */
 .chatbot-window {
-    display: none;
+    display: none; /* Mantém o chatbot oculto inicialmente */
     position: fixed;
-    inset-block-end: 70px;
-    inset-inline-end: 20px;
-    inline-size: 300px;
-    block-size: 500px;
+    bottom: 80px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da lateral direita */
+    width: 320px; /* Largura ajustada */
+    min-height: 500px; /* Altura mínima ajustada */
     background-color: rgb(255, 135, 191);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 20px;
     z-index: 999;
 }
+
 
 /* Estilo do título da janela */
 .chatbot-header {
@@ -292,21 +292,24 @@ footer {
 }
 
 
-/* Estilo da área de respostas */
 .chatbot-response {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 100px;
-    text-align: center;
-    margin-block-start: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;  /* Ajuste a largura para ocupar toda a largura da janela */
+    min-height: 50px; /* Mínima altura para garantir que o chat tenha pelo menos um espaço visível */
+    text-align: left; /* Ajuste o alinhamento do texto */
+    margin-top: 20px;
     font-size: 14px;
     color: #333;
     border-radius: 8px;
     gap: 10px;
     background-color: white;
+    padding: 10px; /* Adicione um pouco de preenchimento para não grudar no limite */
+    box-sizing: border-box;
 }
+
 
 /* Estilo do botão fechar */
 .close-button {
@@ -332,14 +335,13 @@ footer {
     font-size: 14px;
 }
 
-/* Estilo do botão enviar */
 .send-button {
-    inline-size: 100%;
+    width: 100%; /* Garantir que o botão de envio ocupe toda a largura disponível */
     padding: 10px;
     background-color: rgb(158, 0, 74);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-block-start: 10px;
+    margin-top: 10px; /* Espaço acima do botão */
 }
