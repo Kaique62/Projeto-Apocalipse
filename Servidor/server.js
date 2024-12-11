@@ -27,6 +27,7 @@ app.get('/perfil', (req, res) => {
 });
 
 app.get('/agendamento', (req, res) => {
+    console.log(paths.getPage("Agendamento"));
     res.sendFile(paths.getPage("Agendamento"));
 });
 
