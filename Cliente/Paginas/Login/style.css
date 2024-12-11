@@ -240,3 +240,24 @@ ion-icon{
         background-image: none;
     }
   }
+
+#tela_verificaçao{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: absolute;
+    left: 300px;
+    bottom: 225px;
+    gap: 50px;
+    background-color: #ffffff;
+    padding: 40px;
+    min-width: 200px;
+    width: 400px;
+    min-height: 300px;
+    border-radius: 30px;
+    border: 2px solid black;
+    margin-bottom: 200px;
+    margin: 100px auto;
+   
+    z-index: 1;
+}
