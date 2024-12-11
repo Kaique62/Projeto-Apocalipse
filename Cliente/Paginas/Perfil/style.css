@@ -113,3 +113,22 @@ ion-icon{
     height: 200px;
     border-radius: 15px;
 }
+#NovaConsulta {
+    height: 30px;
+    width: 30px;
+    border: solid 1px black;
+    background-color: #e291ad;
+    border-radius: 100%;
+    margin: 10px;
+}
+#NovaConsulta:hover {
+    background-color: #df7ea0;
+}
+#NovaConsulta:active {
+    background-color: #db4b7d;
+}
+
+#consultaContentDiv {
+    display: flex;
+    align-items: center;
+}
