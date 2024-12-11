@@ -1,5 +1,5 @@
-var last = null;
-var hour_select;
+var last = "";
+var hour_select = "";
 
 function kattlen() {
     for (let i = 0; i < 6; i++){
@@ -10,15 +10,6 @@ function kattlen() {
             document.getElementById("option-" + (i + 1)).checked = false;
         }
     }
-
-    let obj = {"name":'kaique', "gender":'E', "convenience_state":'um', "convenience_list": 'bobao'};
-    fetch('http://172.16.30.52/', {
-        method: "POST",
-        body: JSON.stringify(obj),
-        headers: {
-            'content-type': "application/json; charset=UTF-8",
-        }
-    });
 }
 
 function laila() {
@@ -49,7 +40,7 @@ function createHourAtDays() {
         let b = document.createElement('div');
         b.className = 'label-dia';
         if (i == 0) {
-            b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1) + " (Hoje)"; 
+            b.textContent =  (today.getDate() + i) + "/" + (today.getMonth() + 1); 
             b.id = 'd1';
         }
         else {
@@ -71,13 +62,67 @@ function createHourAtDays() {
 
 function change(id) {
     let element = document.getElementById(id);
-    element.getAttribute("class") == "single-hour verde2" ? element.setAttribute("class", "single-hour verde"): element.setAttribute("class", "single-hour verde2");
-
-    if (last != null) {
-        document.getElementById(last).className = "single-hour verde"
+    if (last == id) {
+        last = "";
+        hour_select = "";
+        element.setAttribute("class", "single-hour verde");
     }
-    hour_select = element.textContent + '|' + element.parentElement.getElementsByClassName('label-dia')[0].textContent;
-    console.log(hour_select);
-    last = id;
+    else {
+        
+        element.getAttribute("class") == "single-hour verde2" ? element.setAttribute("class", "single-hour verde"): element.setAttribute("class", "single-hour verde2");    
+        if (last != "") {
+            document.getElementById(last).className = "single-hour verde"
+        }
+        hour_select = element.textContent + " " + element.parentElement.getElementsByClassName('label-dia')[0].textContent;
+        last = id;
+    }
 }
+
+function getInputs() {
+    let a = [];
+
+    document.querySelectorAll('.inp').forEach(element => {
+        if (element.checked){
+            a.push(element.value)
+        }
+    });
+
+    let hd = hour_select.split(" ");
+    if (hd[0] == ""){
+        hd[0] = undefined
+    }
+
+    let infos = {
+        "profissional":a[0],
+        "procedimento":a[1],
+        "hora": hd[0],
+        "dia": hd[1],
+        "type":"add_consulta"
+    }
+    console.log(infos)
+    let hh = false;
+    let contentData = ["profissional", "procedimento", "hora", "dia"];
+
+    for (let i  = 0; i < contentData.length; i++){
+       if (infos[contentData[i]] == undefined) {
+        hh = true;
+        break;
+       }
+    }
+
+    if (hh) {
+        alert("Selecione todos os campos");
+    }    
+    else {
+        fetch('http://localhost:5500/upload', {
+            method: "POST",
+            body: JSON.stringify(infos),
+            headers: {
+                'content-type': "application/json; charset=UTF-8",
+            }
+        })
+    }
+}
+
+
 createHourAtDays()
