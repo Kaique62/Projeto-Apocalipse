@@ -418,56 +418,21 @@ footer {
 
 .resumo-container {
     display: flex;
-    height: 500px;
+    height: 200px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 40px;
     margin-top: 10px;
-    width: 410px;
+    width: 900px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: none; /* Esconde o resumo inicialmente */
     z-index: 9999;
+    border: 2px solid black;
 }
 
 
-.resumo-container #resumoText{
-    font-size: 14px;
-    color: #333;
-    border: black 2px black;
-    background-color: #333;
-}
-
-.resumo-container #resumoText.u{
-    font-size: 14px;
-    color: #333;
-
-}.resumo-container #resumoText.d{
+#resumoText {
     font-size: 14px;
     color: #333;
 }
 
-.resumo-container #resumoText.t{
-    font-size: 14px;
-    color: #333;
-}
-
-.resumo-container #resumoText.q{
-    font-size: 14px;
-    color: #333;
-}
-
-.resumo-container #resumoText.c{
-    font-size: 14px;
-    color: #333;
-}
-
-
-.teste{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 40px;
-    width: 400px;
-    height: 600px;
-}
