@@ -295,3 +295,124 @@ footer {
     margin-bottom: 20px; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
+
+
+.chatbot-button {
+    position: fixed;
+    inset-block-end: 20px;
+    inset-inline-end: 20px;
+    background-color: rgb(212, 38, 120);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 2px 0 5px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chatbot-window {
+    display: none; /* Mantém o chatbot oculto inicialmente */
+    position: fixed;
+    bottom: 80px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da lateral direita */
+    width: 320px; /* Largura ajustada */
+    min-height: 500px; /* Altura mínima ajustada */
+    background-color: rgb(255, 135, 191);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 999;
+    backdrop-filter: blur(px);
+}
+
+
+/* Estilo do título da janela */
+.chatbot-header {
+    text-align: center;
+    font-size: 18px;
+    margin-block-end: 20px;
+    color: white;
+}
+
+/* Estilo das opções de perguntas */
+.options-list {
+    list-style-type: none;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.options-list li {
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.options-list li:hover{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(207, 0, 128);
+    
+    color: white;
+}
+
+
+.chatbot-response {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;  /* Ajuste a largura para ocupar toda a largura da janela */
+    min-height: 50px; /* Mínima altura para garantir que o chat tenha pelo menos um espaço visível */
+    text-align: left; /* Ajuste o alinhamento do texto */
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    gap: 10px;
+    background-color: white;
+    padding: 10px; /* Adicione um pouco de preenchimento para não grudar no limite */
+    box-sizing: border-box;
+}
+
+
+/* Estilo do botão fechar */
+.close-button {
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+}
+
+/* Estilo do campo de input para perguntas */
+.user-input {
+    inline-size: 93%;
+    padding: 10px;
+    margin-block-start: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.send-button {
+    width: 100%; /* Garantir que o botão de envio ocupe toda a largura disponível */
+    padding: 10px;
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
