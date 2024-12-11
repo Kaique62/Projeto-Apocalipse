@@ -1,29 +1,440 @@
 var usuariosCadastrados = {};
 
-function cadastrar(){
-    let informationID = ["emailCadastro", "passwordCadastro", "nameCadastro", "nascimentoCadastro", "generoCadastro", "telefoneCadastro"]
-    let dicionario = {}
-    for (let i = 0; i < informationID.length; i++){
-        if (document.getElementById(informationID[i]).value.trim() == "");
-        console.log("Preencha Todos os Campos!");
-        dicionario[informationID[i]] = document.getElementById(informationID[i]).value;
+var triangleImage = document.getElementById("triangle");
+
+function resizeTriangle() {
+    triangleImage.style.backgroundPosition = `-${0 + (1920 - window.innerWidth)}px`;
+}
+
+addEventListener("resize", resizeTriangle);
+
+document.getElementById("telefoneCadastro").addEventListener("input", function (e) {
+    let telefone = e.target.value.replace(/\D/g, "");
+    if (telefone.length > 11) telefone = telefone.slice(0, 11);
+    if (telefone.length > 6) {
+        e.target.value = `(${telefone.slice(0, 2)})${telefone.slice(2, 7)}-${telefone.slice(7)}`;
+    } else if (telefone.length > 2) {
+        e.target.value = `(${telefone.slice(0, 2)})${telefone.slice(2)}`;
+    } else {
+        e.target.value = telefone;
+    }
+});
+
+function cadastrar() {
+    localStorage.setItem("local","cadastrar")
+    const nome = document.getElementById("nameCadastro").value.trim();
+    const genero = document.querySelector("input[name='genero']:checked");
+    const nascimento = document.getElementById("nascimentoCadastro").value;
+    const telefone = document.getElementById("telefoneCadastro").value.trim();
+    const email = document.getElementById("emailCadastro").value.trim();
+    const senha = document.getElementById("passwordCadastro").value;
+    const confirmarSenha = document.getElementById("confirmPasswordCadastro").value;
+    const alertas = document.getElementById("Alertas2");
+
+    alertas.textContent = "";
+
+    if (!nome || !genero || !nascimento || !telefone || !email || !senha || !confirmarSenha) {
+        alertas.textContent = "Por favor, preencha todos os campos.";
+        return;
+    }
+
+    if (!nome) {
+        alertas.textContent = "Por favor, insira seu nome.";
+        return;
+    }
+
+    if (!genero) {
+        alertas.textContent = "Por favor, selecione seu gênero.";
+        return;
+    }
+
+    const anoNascimento = new Date(nascimento).getFullYear();
+    const anoAtual = new Date().getFullYear();
+    if (anoNascimento < 1900 || anoNascimento >= anoAtual) {
+        alertas.textContent = "Por favor, insira uma data de nascimento válida (entre 1900 e o ano passado).";
+        return;
+    }
+
+    const telefoneRegex = /^\(\d{2}\)\d{5}-\d{4}$/;
+    if (!telefoneRegex.test(telefone)) {
+        alertas.textContent = "Por favor, insira um telefone válido no formato (XX)XXXXX-XXXX.";
+        return;
+    }
+
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!emailRegex.test(email)) {
+        alertas.textContent = "Por favor, insira um e-mail válido.";
+        return;
+    }
+
+    const senhaForteRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!senhaForteRegex.test(senha)) {
+        alertas.textContent =
+            "A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e símbolos.";
+        return;
+    }
+
+    if (senha !== confirmarSenha) {
+        alertas.textContent = "As senhas não coincidem.";
+        return;
+    }
+
+    const dadosCadastro = {
+        nome:nome,
+        genero: genero.value,
+        nascimento:nascimento,
+       telefone: telefone,
+        email:email,
+        senha:senha,
+    };
+
+    console.log("Dados de cadastro:", dadosCadastro);
+    localStorage.setItem("dados_cadastro", JSON.stringify(dadosCadastro));
+
+    /*alertas.textContent = "Cadastro realizado com sucesso!";*/
+    enviar_email_cadastro()
+    
+}
+
+function reinviar_codigo() {
+    const emailInput = localStorage.getItem("email");
+
+    if (!emailInput) {
+        alert("Nenhum e-mail associado encontrado. Por favor, faça login ou cadastre-se novamente.");
+        return;
+    }
+
+    const min = 1000;
+    const max = 9999;
+    const numero_aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+    console.log("Novo código gerado:", numero_aleatorio);
+
+    sessionStorage.setItem("codigo", numero_aleatorio);
+
+    const templateParams = {
+        to_email: emailInput,
+        from_name: "Gabriel",
+        from_email: "andreluis5rabelo@gmail.com",
+        subject: "EsticaFlow Código de Verificação",
+        code: numero_aleatorio
+    };
+
+    emailjs.send("service_dd5wghg", "template_fs3lbid", templateParams)
+        .then(function (response) {
+            const alertas = document.getElementById("alertas_verificacao");
+            alertas.textContent = "O código foi reenviado para o seu e-mail.";
+            alertas.style.color = "green";
+        }, function (error) {
+            const alertas = document.getElementById("alertas_verificacao");
+            alertas.textContent = "Erro ao reenviar o e-mail: " + error.text;
+            alertas.style.color = "red";
+        });
+
+    const display = document.querySelector('#timer');
+    startTimer(300, display, function () {
+        const alertas = document.getElementById("alertas_verificacao");
+        alertas.textContent = "O código expirou! Solicite um novo.";
+        alertas.style.color = "red";
+        sessionStorage.removeItem("codigo");
+    });
+}
+
+let timerInterval = null;
+
+function startTimer(duration, display, callback) {
+    let timer = duration;
+    let minutes, seconds;
+
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    timerInterval = setInterval(function () {
+        minutes = Math.floor(timer / 60); 
+        seconds = timer % 60;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        if (display) {
+            display.textContent = `${minutes}:${seconds}`;
+        }
+
+        if (--timer < 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            sessionStorage.removeItem("codigo");
+            console.log("Código removido devido à expiração.");
+            if (callback) {
+                callback();
+            }
+        }
+    }, 1000);
+}
+
+function iniciar() {
+    console.log("Iniciando o processo...");
+
+    const alertas = document.getElementById("alertas_verificacao");
+    alertas.textContent = "";
+
+    const display = document.querySelector('#timer');
+    startTimer(300, display, function () {
+        alertas.textContent = "O código expirou! Solicite um novo.";
+        alertas.style.color = "red";
+    });
+}
+
+function verificar_codigo() {
+    const codigoInserido = document.getElementById('codigo_verificador').value.trim();
+    const alertas = document.getElementById('alertas_verificacao');
+    const codigoCorreto = sessionStorage.getItem("codigo");
+    alertas.textContent = "";
+
+    if (!codigoInserido) {
+        alertas.textContent = "Por favor, insira o código de verificação.";
+        alertas.style.color = "red";
+        return;
+    }
+
+    if (!codigoCorreto) {
+        alertas.textContent = "O código expirou ou não foi gerado. Solicite um novo.";
+        alertas.style.color = "red";
+        return;
+    }
+
+    if (codigoInserido === codigoCorreto) {
+        alertas.textContent = "Código correto! Você foi autenticado.";
+        alertas.style.color = "green";
+        sessionStorage.removeItem("codigo");
+
+        const local = localStorage.getItem("local");
+
+        if (local === "cadastrar") {
+            const dadosCadastro = JSON.parse(localStorage.getItem("dados_cadastro"));
+
+            if (!dadosCadastro) {
+                alert("Erro: Dados de cadastro não encontrados.");
+                return;
+            }
+
+            enviarDados(dadosCadastro);
+        } else if (local === "login") {
+            const email = localStorage.getItem("email");
+            const senha = localStorage.getItem("senha");
+
+            if (!email || !senha) {
+                alert("Erro: Email ou senha não encontrados. Tente novamente.");
+                return;
+            }
+
+            const dadosLogin = { type: "login", email: email, senha: senha };
+
+            fetch('https://tan-dolphin-355268.hostingersite.com/login', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                },
+                body: JSON.stringify(dadosLogin),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erro na requisição: ${response.statusText} (${response.status})`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert("Login realizado com sucesso!");
+                } else {
+                    alert("Erro no login: " + data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Erro na comunicação:", error);
+                alert("Ocorreu um problema ao se comunicar com o servidor. Tente novamente mais tarde.");
+            });
+        }
+    } else {
+        alertas.textContent = "Código incorreto! Tente novamente.";
+        alertas.style.color = "red";
     }
 }
 
-function login(){
-    let user = document.getElementById("userLogin").value;
-    let senha = document.getElementById("passwordLogin").value;
+function enviarDados(dados_cadastro) {
+    if (!dados_cadastro) {
+        console.error("Erro: Dados de cadastro não fornecidos.");
+        return;
+    }
+
+    const dados = { dados_cadastro };
+
+    fetch('https://tan-dolphin-355268.hostingersite.com', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(dados),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.statusText} (${response.status})`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Resposta do servidor:", data);
+        if (data.success) {
+            alert("Cadastro realizado com sucesso!");
+        } else {
+            alert("Erro no cadastro: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Erro na comunicação:", error);
+        alert("Ocorreu um problema ao se comunicar com o servidor. Tente novamente mais tarde.");
+    });
+}
+
+
+function enviar_email_cadastro() {
+    const emailInput = document.getElementById('emailCadastro').value;
+
+
+    const min = 1000;
+    const max = 9999;
+    var numero_aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+    console.log("Código gerado: ", numero_aleatorio);
+
+    sessionStorage.setItem("codigo", numero_aleatorio);
+    localStorage.setItem("email", emailInput);
+
+
+    const templateParams = {
+        to_email: emailInput,
+        from_name: "Gabriel",
+        from_email: "andreluis5rabelo@gmail.com",
+        subject: "EsticaFlow Código de Verificação de cadastro",
+        code: numero_aleatorio
+    };
+
+    emailjs.send("service_dd5wghg", "template_fs3lbid", templateParams)
+        .then(function (response) {
+            alertas.textContent = "Enviamos um código de verificação, por favor, verifique seu email.";
+        }, function (error) {
+            alert("Erro ao enviar e-mail: " + error.text);
+        });
+
+    changeMode_2('cadastrar');
+    const display = document.querySelector('#timer');
+    startTimer(300, display, function () {
+        const alertas = document.getElementById("alertas_verificacao");
+        alertas.textContent = "O código expirou! Solicite um novo.";
+        alertas.style.color = "red";
+        sessionStorage.removeItem("codigo");
+    });
+}
+
+
+function enviar_email_login() {
+    localStorage.setItem("local","login")
+    const emailInput = document.getElementById('userLogin').value;
+    const passwordInput = document.getElementById('passwordLogin').value;
+    const alertas = document.getElementById('alertas');
+    const verificarEmail = new RegExp(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
+
+    alertas.textContent = "";
+
+    if (!verificarEmail.test(emailInput)) {
+        alertas.textContent = "Por favor, insira um endereço de e-mail válido.";
+        return;
+    }
+
+    if (!passwordInput) {
+        alertas.textContent = "Por favor, preencha o campo de senha.";
+        return;
+    }
+
+    const min = 1000;
+    const max = 9999;
+    var numero_aleatorio = Math.floor(Math.random() * (max - min + 1) + min);
+    console.log("Código gerado: ", numero_aleatorio);
+
+    sessionStorage.setItem("codigo", numero_aleatorio);
+    localStorage.setItem("email", emailInput);
+    localStorage.setItem("senha", passwordInput);
+
+    const templateParams = {
+        to_email: emailInput,
+        from_name: "Gabriel",
+        from_email: "andreluis5rabelo@gmail.com",
+        subject: "EsticaFlow Código de Verificação",
+        code: numero_aleatorio
+    };
+
+    emailjs.send("service_dd5wghg", "template_fs3lbid", templateParams)
+        .then(function (response) {
+            alertas.textContent = "Enviamos um código de verificação, por favor, verifique seu email.";
+        }, function (error) {
+            alert("Erro ao enviar e-mail: " + error.text);
+        });
+
+    changeMode_2('login');
+    const display = document.querySelector('#timer');
+    startTimer(300, display, function () {
+        const alertas = document.getElementById("alertas_verificacao");
+        alertas.textContent = "O código expirou! Solicite um novo.";
+        alertas.style.color = "red";
+        sessionStorage.removeItem("codigo");
+    });
+}
+
+
+function changeMode_2(tela_mudança, acao = "") {
+    if (tela_mudança ==null || !tela_mudança){
+        var tela_mudança =localStorage.getItem("local")
+    }
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    if (acao === "voltar") {
+        sessionStorage.removeItem("codigo");
+        const alertas = document.getElementById("alertas_verificacao");
+        alertas.textContent = "";
+        document.getElementById("timer").textContent = "";
+    }
+
+    document.getElementById("tela_verificaçao").style.display = 
+        document.getElementById("tela_verificaçao").style.display === "flex" ? "none" : "flex";
+
+    document.getElementById(tela_mudança).style.display = 
+        document.getElementById(tela_mudança).style.display === "none" ? "flex" : "none";
+
+    if (acao !== "voltar" && tela_mudança === "tela_verificaçao") {
+        const display = document.querySelector('#timer');
+        startTimer(300, display, function () {
+            const alertas = document.getElementById("alertas_verificacao");
+            alertas.textContent = "O código expirou! Solicite um novo.";
+            alertas.style.color = "red";
+            sessionStorage.removeItem("codigo");
+        });
+    }
+}
  
-    if (user.trim() == "" | senha.trim() == ""){
-        console.log("Preencha Todos os Campos!");
-    }
-    else {
-        console.log(`Usuário: ${user}\n` 
-            + `Senha: ${senha}`);
-    }
+function changeMode(){
+    document.getElementById("cadastrar").style.display = document.getElementById("cadastrar").style.display == "flex" ? "none": "flex"
+    document.getElementById("login").style.display = document.getElementById("login").style.display == "none" ? "flex": "none"
 }
 
-function changeMode(){
-    document.getElementById("divCadastro").style.display = document.getElementById("divCadastro").style.display == "none" ? "block": "none"
-    document.getElementById("divLogin").style.display = document.getElementById("divLogin").style.display == "none" ? "block": "none"
+function PasswordVisibility(id){
+    let element = document.getElementById(id);
+    element.getAttribute("type") == "password" ? element.setAttribute("type", ""): element.setAttribute("type", "password");
+
+    let eyePass = document.getElementsByClassName(id)[0];
+    eyePass.getAttribute("name") == "eye-outline" ? eyePass.setAttribute("name", "eye-off-outline") : eyePass.setAttribute("name", "eye-outline")
+
+    console.log()
 }

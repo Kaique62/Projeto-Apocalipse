@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 135, 191);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    min-width: 320px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 135, 191);
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 15px;
+    min-width: 320px;
+}
+
+.btn {
+    width: 160px;
+    height: 60px;
+    background-color: white;
+    border: 0;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(212, 38, 120);
+    color: white;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    background-color: pink;
+    border-radius: 15px;
+    margin: 15px;
+    transition: 0.3s all;
+}
+
+.card:hover {
+    cursor: pointer;
+    width: 250px;
+    height: 90px;
+    background-color: rgb(212, 38, 120);
+    color: white;
+    margin-bottom: 45px;
+    -webkit-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.75);
+    
+}
+
+.divText {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 50%;
+}
+
+.Divdasprofissionais {
+    display: flex;
+    padding: 35px;
+    background-color: pink;
+    border-radius: 15px;
+    gap: 10px;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Distância da parte inferior */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.para1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.para2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    width: 100%;
+    height: 550px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    margin-top: 40px; 
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(250, 210, 217);
+    box-shadow: 0px 0px 26px -4px rgb(71, 71, 71);
+    position: relative;
+}
+
+.container #show {
+    width: 70%;
+    height: auto; 
+    min-height: 500px; 
+    max-height: 800px; 
+    background-image: url('https://img.freepik.com/vetores-premium/modelo-de-conjunto-de-design-de-logotipo-de-salao-de-beleza_76712-436.jpg');
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+
+.container #show.principal {
+    background: url('https://img.freepik.com/vetores-premium/modelo-de-conjunto-de-design-de-logotipo-de-salao-de-beleza_76712-436.jpg');
+    background-size: cover;
+}
+
+.container #show.one {
+    background: url('https://www.drhomeroferraro.com.br/wp-content/uploads/2019/08/302315-harmonizacao-facial-entenda-como-e-feito-o-procedimento.jpg');
+    background-size: cover;
+}
+
+.container #show.two {
+    background: url('https://img.freepik.com/fotos-gratis/mulher-fazendo-procedimentos-de-beleza-em-um-salao-de-beleza_1303-16728.jpg?semt=ais_hybrid');
+    background-size: cover;
+}
+
+.container #show.three {
+    background: url('https://img.freepik.com/fotos-premium/close-up-vista-da-mulher-deitada-no-salao-spa-e-tem-o-procedimento-de-limpeza-de-rosto-pela-mascara_146671-29268.jpg?semt=ais_hybrid');
+    background-size: cover;
+}
+
+.container #show.four {
+    background: url('https://media.licdn.com/dms/image/v2/D4D12AQHv5LRJsadi9A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1689768269694?e=2147483647&v=beta&t=f21CrcYjlMuMEjfUynsd5k3AlFJGQ3JPc1y27hvyb0Y');
+    background-size: cover;
+}
+
+.container #show.five {
+    background: url('https://media.gettyimages.com/id/1388146304/pt/v%C3%ADdeo/face-beauty-treatment.jpg?s=640x640&k=20&c=i--PT_k4A2FPwgK7koqKkophjuUYTwJzG0WytMVnZuw=');
+    background-size: cover; 
+}
+
+
+.cols {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+    min-width: 300px; 
+    position: relative; 
+    z-index: 5; 
+}
+
+.por_que{  /*div do "por que escolher a beautyflow"*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container #show {
+        width: 100%;
+        height: 400px; /* Ajustado para telas menores */
+    }
+
+    .cols {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container #show {
+        height: 300px; /* Ajustado para telas muito pequenas */
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+}
+
+
+.kattlen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 1px;
+    padding-left: 60px;
+    padding-bottom: 40px;
+    flex-direction: column;
+}
+
+.laila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 1px;
+    padding-left: 150px;
+    flex-direction: column;
+    padding-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.laaila{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    height: 80px;
+    width: 290px;
+}
+
+.kattlenn{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    height: 80px;
+    width: 290px;
+}
+
+
+.backdoporque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chata{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.chatbot-button {
+    position: fixed;
+    inset-block-end: 20px;
+    inset-inline-end: 20px;
+    background-color: rgb(212, 38, 120);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 2px 0 5px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chatbot-window {
+    display: none; /* Mantém o chatbot oculto inicialmente */
+    position: fixed;
+    bottom: 80px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da lateral direita */
+    width: 320px; /* Largura ajustada */
+    min-height: 500px; /* Altura mínima ajustada */
+    background-color: rgb(255, 135, 191);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 999;
+    backdrop-filter: blur(px);
+}
+
+
+/* Estilo do título da janela */
+.chatbot-header {
+    text-align: center;
+    font-size: 18px;
+    margin-block-end: 20px;
+    color: white;
+}
+
+/* Estilo das opções de perguntas */
+.options-list {
+    list-style-type: none;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.options-list li {
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.options-list li:hover{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(207, 0, 128);
+    
+    color: white;
+}
+
+
+.chatbot-response {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;  /* Ajuste a largura para ocupar toda a largura da janela */
+    min-height: 50px; /* Mínima altura para garantir que o chat tenha pelo menos um espaço visível */
+    text-align: left; /* Ajuste o alinhamento do texto */
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    gap: 10px;
+    background-color: white;
+    padding: 10px; /* Adicione um pouco de preenchimento para não grudar no limite */
+    box-sizing: border-box;
+}
+
+
+/* Estilo do botão fechar */
+.close-button {
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+}
+
+/* Estilo do campo de input para perguntas */
+.user-input {
+    inline-size: 93%;
+    padding: 10px;
+    margin-block-start: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.send-button {
+    width: 100%; /* Garantir que o botão de envio ocupe toda a largura disponível */
+    padding: 10px;
+    background-color: rgb(158, 0, 74);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espaço acima do botão */
+}
+

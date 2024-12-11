@@ -5,54 +5,79 @@
 }
 body{
     display: flex;
-    width: 1800px;
-    height: 920px;
+    min-height: 920px;
     align-items: center;
+    background-color: pink;
+    overflow: hidden; /* Hide scrollbars */
 }
-.form {
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 135, 191);
+    width: 100%;
+    border-radius: 30px;
+}
+
+/*Informações do Login*/
+
+#login{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-self: center;
+    position: absolute;
+    left: 200px;
+    bottom: 125px;
+    gap: 50px;
     background-color: #ffffff;
-    padding: 30px;
-    width: 450px;
-    border-radius: 20px;
+    padding: 40px;
+    min-width: 200px;
+    width: 400px;
+    min-height: 300px;
+    border-radius: 30px;
     border: 2px solid black;
+    margin-bottom: 200px;
+    margin: 100px auto;
+    z-index: 1;
 }
-  
+
+.flex-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form button {
     align-self: flex-end;
 }
-  
+
 .flex-column > label {
     color: #151717;
     font-weight: 600;
 }
   
 .inputForm {
-    border: 1.5px solid #ecedec;
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 350px;
     height: 50px;
+    border: 1px black solid ;
     display: flex;
     align-items: center;
     padding-left: 10px;
-    transition: 0.2s ease-in-out;
+    transition: 0.05s ease-in-out;
+    justify-content: space-between;
 }
-  
+
 .input {
-    margin-left: 10px;
-    border-radius: 10px;
+    margin-left: 20px;
+    border-radius: 15px;
     border: none;
-    width: 85%;
-    height: 100%;
+    width: 150px;
+    height: 30px;
 }
   
 .input:focus {
     outline: none;
-}
-  
-.inputForm:focus-within {
-    border: 1.5px solid rgb(67, 67, 243);
 }
   
 .flex-row {
@@ -116,15 +141,123 @@ body{
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-  
+
 .btn:hover {
-    border: 1px solid #2d79f3;
+    border: 1.5px solid #2d79f3;
 }
-  
-      
-#photos{
-    background-color: black;
-    z-index: 2;
-    width: 500px;
-    height: 500px;
+
+/*Informações do Cadadastro*/
+#cadastrar{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    z-index: 1;
+    gap: 40px;
+    background-color: #ffffff;
+    padding: 40px;
+    min-height: 250px;
+    min-height: 300px;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+#inputFormName{
+    border-radius: 15px;
+    width: 98%;
+    height: 50px;
+    border: 1px black solid ;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.05s ease-in-out;
+    justify-content: space-between;
+}
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#registerSexos{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 80px;
+}
+
+#masculino{
+    display: flex;
+    flex-direction: column;
+}
+
+#feminino{
+    display: flex;
+    flex-direction: column;
+}
+
+#optionSexos{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+}
+
+ion-icon{
+    width: 25px;
+    height: 25px;
+}
+/*Imagem Lateral*/
+#triangle {
+	width: 1600px;
+	height: 1080px;
+	background: transparent;
+    margin-left: -200px;
+    
+	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(100% -50%, 0% 100%, 100% 100%);
+
+    background-image:url("https://ma.senac.br/wp-content/uploads/2017/11/instituto_mais_beleza_backg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    justify-items: flex-end;
+
+    margin-left: 450px;
+    margin-right: -50px;
+    margin-top: -50px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 950px){
+    #triangle {
+        width: 0px;
+        height: 0px;
+        background-image: none;
+    }
+  }
+
+#tela_verificaçao{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: absolute;
+    left: 300px;
+    bottom: 225px;
+    gap: 50px;
+    background-color: #ffffff;
+    padding: 40px;
+    min-width: 200px;
+    width: 400px;
+    min-height: 300px;
+    border-radius: 30px;
+    border: 2px solid black;
+    margin-bottom: 200px;
+    margin: 100px auto;
+   
+    z-index: 1;
 }

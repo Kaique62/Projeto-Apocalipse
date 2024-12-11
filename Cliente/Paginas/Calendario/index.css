@@ -1,0 +1,93 @@
+.calendar {
+    display: grid;
+    aspect-ratio: 8/6;
+    min-width: 200px;
+    max-width: fit-content - 4px;
+    grid-template: 12.5% 12.5% 75% / auto;
+    background-color: #F9F5FF;
+    padding: 0px;
+    width: 60%;
+    height: 380px;
+}
+
+#DiasDaSemana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    border: solid 1px transparent;
+    grid-column: 1/-1;
+    padding: 0px;
+    background-color: #D4C2FC;
+    grid-row: 2;
+}
+.FramesSemana {
+    text-align: center;
+    border-top: none;
+    align-content: center;
+    margin-top: -2px;
+    border-left: none;
+}
+.FramesSemana:hover { 
+    cursor: pointer;
+}
+
+.borderlessRight {
+    border-right: none;
+}
+
+#DiasDoMes{
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(7, 1fr); 
+    grid-column: 1/-1;
+    table-layout: fixed;
+    border: solid 1px transparent;
+    padding: 0px;
+    margin-bottom: -2px;
+    grid-row: 3;
+}
+
+#MonthHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-column: 1/-1;
+    padding: 0px;
+    grid-row: 1;*/
+}
+
+.borderlessDown {
+    border-bottom: none;
+}
+
+#dataDiv {
+    text-align: center;
+    align-content: center;
+    font-size: 25px;
+}
+
+.monthContent {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.monthButton{
+    text-align: center;
+    height: 100%;
+    width: 50%;
+}
+
+.monthButton:hover {
+    cursor: pointer;
+    background-color: bisque;
+}
+
+#buttonsPassMouth {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+}
