@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeautyFlow</title>
     <link rel="stylesheet" href="style.css">
+    <script src="arquivo.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
         </div>
         <div id="ah"></div>
         <div>
-            <a href="">
+            <a href="../Login/index.html">
                 <button class="btn">Fazer uma Consulta</button>
             </a>
         </div>
@@ -62,10 +63,10 @@
                 <div class="cols">
                     <ul>
                         <li rel="one" style="list-style: none;"><div class="card"><h3> Harmonização facial</h3></div></li>
-                        <li rel="two" style="list-style: none;"><div class="card"><h3>Cuidados faciais </h3></div></li>
-                        <li rel="three" style="list-style: none;"><div class="card"><h3>Procedimento 3</h3></div></li>
-                        <li rel="four" style="list-style: none;"><div class="card"><h3>Procedimento 4</h3></div></li>
-                        <li rel="five" style="list-style: none;"><div class="card"><h3>Procedimento 5</h3></div></li> 
+                        <li rel="two" style="list-style: none;"><div class="card"><h3>Spa facial</h3></div></li>
+                        <li rel="three" style="list-style: none;"><div class="card"><h3>Limpeza Geral</h3></div></li>
+                        <li rel="four" style="list-style: none;"><div class="card"><h3>Botox</h3></div></li>
+                        <li rel="five" style="list-style: none;"><div class="card"><h3>Botox premium</h3></div></li> 
                     </ul>    
                 </div>
             </div>
@@ -109,11 +110,37 @@
             <div>
                 <h3>Siga-nos nas redes sociais!</h3>
                 <ul>
-                    <li style="list-style: none;"><b>Instagram:</b> <a href="">@BeautyFlowOficial</a></li>
-                    <li style="list-style: none;"><b>Facebook:</b> <a href="">BeautyFlow</a></li>
+                    <li style="list-style: none;"><b>Instagram:</b> <a href="https://www.instagram.com/">@BeautyFlowOficial</a></li>
+                    <li style="list-style: none;"><b>Facebook:</b> <a href="https://www.facebook.com/?locale=pt_BR">BeautyFlow</a></li>
                 </ul>
             </div>
         </div>
+
+        
+        <button class="chatbot-button" id="posicaodele" onclick="toggleChatbot()">💬</button>
+
+    
+        <!-- Janela do chatbot -->
+<div class="chatbot-window" id="chatbotWindow">
+    <button class="close-button" onclick="closeChatbot()">X</button>
+    <div class="chatbot-header">Chatbot do Beautyflow!</div>
+    <ul class="options-list" id="optionsList">
+        <li onclick="handleOption('oi')">Oi</li>
+        <li onclick="handleOption('qual é o seu nome?')">Qual é o seu nome?</li>
+        <li onclick="handleOption('quais serviços você oferece?')">Quais serviços você oferece?</li>
+        <li onclick="handleOption('qual é o horário de funcionamento?')">Qual é o horário de funcionamento?</li>
+        <li onclick="handleOption('como posso agendar um horário?')">Como posso agendar um horário?</li>
+        <li onclick="handleOption('qual é a localização do salão?')">Qual a localização do salão?</li>
+        <li onclick="handleOption('quais formas de pagamento vocês aceitam?')">Quais formas de pagamento vocês aceitam?</li>
+        <li onclick="handleOption('adeus')">Adeus</li>
+        <!-- Campo para o usuário digitar sua própria pergunta -->
+    <input type="text" id="userQuestion" class="user-input" placeholder="Digite sua pergunta aqui...">
+    <button class="send-button" onclick="sendUserQuestion()">Enviar</button>
+
+    <!-- Área de resposta do chatbot -->
+    <div class="chatbot-response" id="chatbotResponse"></div></div>
+    </ul>   
+    
         
         <script>
             document.querySelectorAll('ul li').forEach(function(listItem){

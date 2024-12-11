@@ -39,6 +39,47 @@ function cadastrar() {
         return;
     }
 
+    if (!nome) {
+        alertas.textContent = "Por favor, insira seu nome.";
+        return;
+    }
+
+    if (!genero) {
+        alertas.textContent = "Por favor, selecione seu gênero.";
+        return;
+    }
+
+    const anoNascimento = new Date(nascimento).getFullYear();
+    const anoAtual = new Date().getFullYear();
+    if (anoNascimento < 1900 || anoNascimento >= anoAtual) {
+        alertas.textContent = "Por favor, insira uma data de nascimento válida (entre 1900 e o ano passado).";
+        return;
+    }
+
+    const telefoneRegex = /^\(\d{2}\)\d{5}-\d{4}$/;
+    if (!telefoneRegex.test(telefone)) {
+        alertas.textContent = "Por favor, insira um telefone válido no formato (XX)XXXXX-XXXX.";
+        return;
+    }
+
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!emailRegex.test(email)) {
+        alertas.textContent = "Por favor, insira um e-mail válido.";
+        return;
+    }
+
+    const senhaForteRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!senhaForteRegex.test(senha)) {
+        alertas.textContent =
+            "A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e símbolos.";
+        return;
+    }
+
+    if (senha !== confirmarSenha) {
+        alertas.textContent = "As senhas não coincidem.";
+        return;
+    }
+
     const dadosCadastro = {
         nome:nome,
         genero: genero.value,
@@ -91,7 +132,7 @@ function reinviar_codigo() {
         });
 
     const display = document.querySelector('#timer');
-    startTimer(30, display, function () {
+    startTimer(300, display, function () {
         const alertas = document.getElementById("alertas_verificacao");
         alertas.textContent = "O código expirou! Solicite um novo.";
         alertas.style.color = "red";
@@ -140,7 +181,7 @@ function iniciar() {
     alertas.textContent = "";
 
     const display = document.querySelector('#timer');
-    startTimer(30, display, function () {
+    startTimer(300, display, function () {
         alertas.textContent = "O código expirou! Solicite um novo.";
         alertas.style.color = "red";
     });
@@ -288,7 +329,7 @@ function enviar_email_cadastro() {
 
     changeMode_2('cadastrar');
     const display = document.querySelector('#timer');
-    startTimer(30, display, function () {
+    startTimer(300, display, function () {
         const alertas = document.getElementById("alertas_verificacao");
         alertas.textContent = "O código expirou! Solicite um novo.";
         alertas.style.color = "red";
@@ -342,7 +383,7 @@ function enviar_email_login() {
 
     changeMode_2('login');
     const display = document.querySelector('#timer');
-    startTimer(30, display, function () {
+    startTimer(300, display, function () {
         const alertas = document.getElementById("alertas_verificacao");
         alertas.textContent = "O código expirou! Solicite um novo.";
         alertas.style.color = "red";
@@ -375,7 +416,7 @@ function changeMode_2(tela_mudança, acao = "") {
 
     if (acao !== "voltar" && tela_mudança === "tela_verificaçao") {
         const display = document.querySelector('#timer');
-        startTimer(30, display, function () {
+        startTimer(300, display, function () {
             const alertas = document.getElementById("alertas_verificacao");
             alertas.textContent = "O código expirou! Solicite um novo.";
             alertas.style.color = "red";
