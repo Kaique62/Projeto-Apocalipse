@@ -16,25 +16,57 @@
             <ion-icon name="person-circle-outline" id="iconeUsuario"></ion-icon>
         </div>
     
-        <div id="informacoesEdicao">
-            <p id="nome"><b>Nome:</b></p>
-            <p id="genero"><b>Genero:</b></p>
-            <p id="datanasc"><b>Data de Nascimento:</b></p>
-            <p id="tel"><b>Telefone:</b></p>
-            <p id="email"><b>Email:</b></p>
+        <div id="infoPessoais">
+            <div id="fotoPerfil">
+                <ion-icon name="person-circle-outline" id="iconeUsuario"></ion-icon>
+            </div>
+        
+            <div id="informacoesEdicao">
+                <div id="button">
+                    <button id="edit" style="height: 50px ;border-radius: 15px; background-color: #f5f5f7;" onclick="EditInfo()"><b>Editar Informações Aqui</b></button>
+                </div>
+
+                <div class="infoPart">
+                    <p id="nome"><b>Nome: </b></p> <p id="nomeDefinido"> Testando</p>
+                </div>
+                
+                <div class="infoPart">
+                    <p id="genero"><b>Genero: </b></p> <p id="generoDefinido">Testando</p>
+                </div>
+                
+                <div class="infoPart">
+                    <p id="datanasc"><b>Data de Nascimento: </b></p> <p id="DataNascDefinida">Testando</p>
+                </div>
+                
+                <div class="infoPart">
+                    <p id="tel"><b>Telefone: </b></p> <p id="telefoneDefinido">Testando</p>
+                </div>
+                
+                <div class="infoPart">
+                    <p id="email"><b>Email: </b></p> <p id="emailDefinido">Testando</p>
+                </div>
+            </div>
+        </div>  
+    
+        <h2>Consultas: </h2>
+        <div id="consultaContentDiv">
+            <a href="../Agendamento/tela1.html">
+                <button id="NovaConsulta">+</button>
+            </a>
+            <label>Realizar uma nova Consulta</label>
         </div>
+        <div id="minhasConsultas"></div>
     </div>
 
-    
-    <h2>Consultas: </h2>
-    <div id="consultaContentDiv">
-        <a href="../Agendamento/tela1.html">
-            <button id="NovaConsulta">+</button>
-        </a>
-        <label>Realizar uma nova Consulta</label>
+    <div id="popup">
+        <h1>Atualizar Informações Pessoais</h1>
+            <label for="nameEdit">Nome: </label><input type="text" id="nameEdit">
+            <label for="generoedit">Genero: </label><input type="text" id="generoedit">
+            <label for="dataedit">Data de Nascimento: </label><input type="text" id="dataedit">
+            <label for="telEdit">Telefone: </label><input type="text" id="telEdit">
+            <label for="emailEdit">Email: </label><input type="text" id="emailEdit">
+            <button onclick="Editado()">Editar Informações</button>
     </div>
-    
-    <div id="minhasConsultas"></div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
