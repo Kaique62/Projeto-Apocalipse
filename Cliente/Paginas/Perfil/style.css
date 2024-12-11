@@ -26,6 +26,7 @@ body {
     height: 100px;
     background-color: #ee91ad;
     border-radius: 15px;
+    justify-content: center;
 }
 
 ion-icon{
@@ -60,16 +61,38 @@ ion-icon{
     gap: 10px;
     background-color: #ee91ad;
     width: 99%;
-    height: 250px;
+    min-height: max-content + 20px;
     border-radius: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-
 .consultas{
-    width: 10%;
-    height: 90%;
+    display: grid;
+    grid-area: 100% / repeat(4, 25%);
+    min-width: 150px;
+    width: 13%;
+    min-height: 200px;
     background-color: #f5f5f7;
     border-radius: 20px;
+    padding: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+#iconeUsuario {
+    min-width: 200px;
+    width: 200px;
+}
+.consultasLabel {
+    margin: 3px;
+    text-align: left;
+}
+.pendente {
+    background-color: #0f0;
+}
+.realizado {
+    background-color: yellow;
+}
+
 
 #historicos{
     display: flex;
