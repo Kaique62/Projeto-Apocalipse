@@ -104,23 +104,23 @@
 
         <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
 
-<!-- Janela do chatbot -->
-<div class="chatbot-window" id="chatbotWindow">
-    <button class="close-button" onclick="closeChatbot()">X</button>
-    <div class="chatbot-header">Chatbot do Beautyflow!</div>
-    <ul class="options-list" id="optionsList">
-        <li onclick="handleOption('oi')">Oi</li>
-        <li onclick="handleOption('qual é o seu nome?')">Qual é o seu nome?</li>
-        <li onclick="handleOption('quais serviços você oferece?')">Quais serviços você oferece?</li>
-        <li onclick="handleOption('qual é o horário de funcionamento?')">Qual é o horário de funcionamento?</li>
-        <li onclick="handleOption('adeus')">Adeus</li>
-        <!-- Campo para o usuário digitar sua própria pergunta -->
-    <input type="text" id="userQuestion" class="user-input" placeholder="Digite sua pergunta aqui...">
-    <button class="send-button" onclick="sendUserQuestion()">Enviar</button>
-
-    <!-- Área de resposta do chatbot -->
-    <div class="chatbot-response" id="chatbotResponse"></div></div>
-    </ul>
+        <div class="chatbot-window" id="chatbotWindow">
+            <button class="close-button" onclick="closeChatbot()">X</button>
+            <div class="chatbot-header">Chatbot do Beautyflow!</div>
+            <ul class="options-list" id="optionsList">
+                <li onclick="handleOption('oi')">Oi</li>
+                <li onclick="handleOption('qual é o seu nome?')">Qual é o seu nome?</li>
+                <li onclick="handleOption('quais serviços você oferece?')">Quais serviços você oferece?</li>
+                <li onclick="handleOption('qual é o horário de funcionamento?')">Qual é o horário de funcionamento?</li>
+                <li onclick="handleOption('adeus')">Adeus</li>
+                <!-- Campo para o usuário digitar sua própria pergunta -->
+            <input type="text" id="userQuestion" class="user-input" placeholder="Digite sua pergunta aqui...">
+            <button class="send-button" onclick="sendUserQuestion()">Enviar</button>
+        
+            <!-- Área de resposta do chatbot -->
+            <div class="chatbot-response" id="chatbotResponse"></div></div>
+            </ul>   
+            
     
     
         
@@ -142,6 +142,8 @@
                }) 
             })
 
+
+    
         </script>
 
         

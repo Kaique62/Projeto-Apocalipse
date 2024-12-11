@@ -325,7 +325,6 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 20px;
     z-index: 999;
-    backdrop-filter: blur(px);
 }
 
 
@@ -414,5 +413,26 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px; /* Espaço acima do botão */
+}
+
+
+.resumo-container {
+    display: flex;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 10px;
+    width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Esconde o resumo inicialmente */
+    z-index: 9999;
+    border: 2px solid black;
+}
+
+
+#resumoText {
+    font-size: 14px;
+    color: #333;
 }
 
