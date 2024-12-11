@@ -6,6 +6,10 @@
     <title>BeautySphere</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://ugc.production.linktr.ee/yuPrbErFQIy62s9GlKdT_DV71XG5Lq7TNhRRh" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("45w_ANCm3SyQobAWe");
+    </script>
 </head>
 <body>
 
@@ -39,8 +43,9 @@
         </div>
         <span class="span"><u>Esqueceu a senha?</u></span>
         </div>
-        <button class="button-submit" onclick="login()">Login</button>
+        <button class="button-submit" onclick="enviar_email_login()">Login</button>
         <p class="p">Não tem uma conta?<span class="span" onclick="changeMode()"><u>Cadastre-se</u></span>
+        <p id="alertas"></p>
     </div>
 </div>
 
@@ -142,12 +147,35 @@
 
         <input type="checkbox">
         <label>Lembrar-me</label>
-        <button class="button-submit" onclick="cadastro()">Cadastrar</button>
+        <button class="button-submit" onclick="cadastrar()">Cadastrar</button>
     </div>
     <p class="p">Possui Cadastro?<span class="span" onclick="changeMode()"><u>Fazer Login</u></span>
+    <p id="Alertas2"></p>
 </div>
 
 <div id="triangle"></div>
+
+<div id="tela_verificaçao" style="display: none;">
+    <div class="form">
+        <div class="flex-column">
+            <label>Código de verificação</label>
+            <p>Seu código de verificação expira em:</p>
+            <p id="timer"></p>
+        </div>
+        <div class="inputForm">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="text" class="input" placeholder="Insira o código de verificação" id="codigo_verificador">
+        </div>
+
+        <div class="flex-row">
+            <span class="span" onclick="reinviar_codigo()"><u>Reenviar E-mail</u></span>
+        </div>
+        <button class="button-submit" onclick="verificar_codigo()">Verificar</button>
+        <p class="p">E-mail errado? <span class="span" onclick="changeMode_2('login', 'voltar')"><u>Voltar</u></span></p>
+
+        <p id="alertas_verificacao"></p>
+    </div>
+</div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
