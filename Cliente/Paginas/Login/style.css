@@ -246,6 +246,8 @@ ion-icon{
     flex-direction: column;
     align-self: center;
     position: absolute;
+    left: 300px;
+    bottom: 225px;
     gap: 50px;
     background-color: #ffffff;
     padding: 40px;
