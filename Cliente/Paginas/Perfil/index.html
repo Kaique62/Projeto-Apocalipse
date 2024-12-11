@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div id="infoConta">
+        <h1><b>Perfil: </b></h1>
+    </div>
+
+    <div id="infoPessoais">
+        <div id="fotoPerfil">
+            <ion-icon name="person-circle-outline" id="iconeUsuario"></ion-icon>
+        </div>
+    
+        <div id="informacoesEdicao">
+            <p id="nome"><b>Nome:</b></p>
+            <p id="genero"><b>Genero:</b></p>
+            <p id="datanasc"><b>Data de Nascimento:</b></p>
+            <p id="tel"><b>Telefone:</b></p>
+            <p id="email"><b>Email:</b></p>
+        </div>
+    </div>
+
+    
+    <h2>Consultas: </h2>
+    <div id="consultaContentDiv">
+        <a href="../Agendamento/tela1.html">
+            <button id="NovaConsulta">+</button>
+        </a>
+        <label>Realizar uma nova Consulta</label>
+    </div>
+    
+    <div id="minhasConsultas"></div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
